@@ -5,7 +5,7 @@ from src.data.data_manager import DataManager
 from src.agents.agent_factory import AgentFactory
 from src.core.domain_types import DomainType
 import customtkinter as ctk
-from .agent_tree import AgentTree, AgentTreeNode
+from .agent_tree import AgentTree, AgentTreeView
 
 class Layer:
     def __init__(self, root, theme: UITheme, window_width: int, window_height: int):
@@ -179,40 +179,32 @@ class ChatLayer(Layer):
         """Show agent tree selection dialog"""
         tree_window = ctk.CTkToplevel(self.root)
         tree_window.title("Select Agent")
-        tree_window.geometry("400x500")
+        tree_window.geometry("600x700")  # Increased size
         
-        def create_tree_node(parent, node: AgentTreeNode):
-            frame = ctk.CTkFrame(parent, fg_color='transparent')
-            frame.pack(fill='x', padx=(20, 0), pady=2)
-            
-            label = ctk.CTkLabel(
-                frame,
-                text=node.name,
-                font=self.theme.font_bold if node.domains else self.theme.font
-            )
-            label.pack(side='left')
-            
-            if node.domains:
-                for domain in node.domains:
-                    btn = ctk.CTkButton(
-                        frame,
-                        text=domain.value,
-                        command=lambda d=domain: self._select_agent(d, tree_window),
-                        font=self.theme.font_small,
-                        fg_color=self.theme.button_bg,
-                        hover_color=self.theme.button_hover,
-                        width=100
-                    )
-                    btn.pack(side='right', padx=5)
-            
-            if node.children:
-                for child in node.children:
-                    create_tree_node(parent, child)
+        # Create scrollable container
+        container = ctk.CTkFrame(
+            tree_window,
+            fg_color=self.theme.bg_secondary,
+        )
+        container.pack(fill='both', expand=True, padx=10, pady=10)
         
-        tree_frame = ctk.CTkFrame(tree_window, fg_color=self.theme.bg_secondary)
-        tree_frame.pack(fill='both', expand=True, padx=20, pady=20)
+        # Create and populate tree view directly
+        tree_view = AgentTreeView(
+            container, 
+            self.theme, 
+            on_select=lambda domain: self._select_agent(domain, tree_window)
+        )
+        tree_view.pack(fill='both', expand=True, padx=20, pady=20)
         
-        create_tree_node(tree_frame, self.agent_tree.root)
+        # Center the window relative to the main window
+        tree_window.update_idletasks()
+        x = self.root.winfo_x() + (self.root.winfo_width() - tree_window.winfo_width()) // 2
+        y = self.root.winfo_y() + (self.root.winfo_height() - tree_window.winfo_height()) // 2
+        tree_window.geometry(f"+{x}+{y}")
+        
+        # Make window modal
+        tree_window.transient(self.root)
+        tree_window.grab_set()
     
     def _select_agent(self, domain: DomainType, window: ctk.CTkToplevel):
         """Handle agent selection from tree"""

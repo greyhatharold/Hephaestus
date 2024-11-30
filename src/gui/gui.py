@@ -9,10 +9,10 @@ import base64
 import io
 from src.core.domain_types import DomainType
 from src.gui.layers import LayerSystem
-from .theme import UITheme, DomainThemes
+from .theme import UITheme
 from .animations import FloatingAnimation
 from src.agents.agent_factory import AgentFactory
-from .agent_tree import AgentTree
+from .agent_tree import AgentTree, AgentTreeView
 
 class ProgressIndicator:
     def __init__(self, parent, theme: UITheme):
@@ -52,9 +52,9 @@ class Layer3DGUI:
         self.root = tk.Tk()
         self.root.title("Hephaestus")
         
-        # Initialize theme and data manager
-        self.current_theme = DomainThemes.get_theme(DomainType.TECHNOLOGY)
-        self.data_manager = system.data_manager  # Get data_manager from IdeaProcessor
+        # Initialize single theme
+        self.current_theme = UITheme()
+        self.data_manager = system.data_manager
         
         # Get screen dimensions
         self.screen_width = self.root.winfo_screenwidth()
@@ -570,34 +570,8 @@ Implementation Steps:
         webbrowser.open(f"{base_url}{encoded_code}")
 
     def update_theme(self, domain: DomainType):
-        """Update the theme across all UI elements"""
-        self.current_theme = DomainThemes.get_theme(domain)
-        self.root.configure(bg=self.current_theme.bg_color)
-        self.layer_system.update_theme(self.current_theme)
-        
-        # Update entry frame if it exists
-        if hasattr(self, 'entry_frame'):
-            self.entry_frame.configure(
-                fg_color=self.current_theme.bg_secondary,
-                border_color=self.current_theme.border_color
-            )
-            self.prompt_label.configure(
-                font=self.current_theme.font_title,
-                text_color=self.current_theme.text_secondary
-            )
-            self.input_entry.configure(
-                font=self.current_theme.font,
-                text_color=self.current_theme.text_color,
-                border_color=self.current_theme.border_color,
-                fg_color=self.current_theme.input_bg,
-                placeholder_text_color=self.current_theme.text_disabled
-            )
-            self.chat_button.configure(
-                font=self.current_theme.font_bold,
-                fg_color=self.current_theme.button_bg,
-                hover_color=self.current_theme.button_hover,
-                text_color=self.current_theme.text_color
-            )
+        """Theme updates are no longer needed as we use a single theme"""
+        pass
 
     def _on_window_resize(self, event):
         """Handle window resize events to maintain centering"""
@@ -612,16 +586,23 @@ Implementation Steps:
 
     def show_chat_layer(self):
         """Show chat interface with selected agent"""
-        chat_layer = self.layer_system.layers[4]
+        chat_layer = self.layer_system.layers[4]  # Get chat layer
+        
+        # Set callbacks
         chat_layer.on_agent_changed = self._on_agent_changed
         chat_layer.on_back_pressed = lambda: self.transition_to_layer(2)
+        
+        # Bind chat return handler
+        chat_layer.chat_input.bind('<Return>', self._handle_chat_return)
+        
+        # Show the layer
         self.transition_to_layer(4)
 
     def _on_agent_changed(self, domain: DomainType):
         """Handle changing the current chat agent"""
         self.current_agent = AgentFactory.create_agent(domain)
         # Update theme to match new agent's domain
-        self.update_theme(domain)
+        self.update_theme(UITheme.get_theme())
 
     def _handle_chat_return(self, event):
         if not event.state & 0x1:  # Shift key is not pressed
