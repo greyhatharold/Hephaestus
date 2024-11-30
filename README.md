@@ -50,17 +50,11 @@ The interface morphs based on your domain - cyberpunk for tech, professional for
 Automatically generates diagrams and visualizations to help you understand complex relationships.
 
 3. **Intelligent Chat**
-```python:src/data/chat_history.py
-startLine: 1
-endLine: 25
-```
+
 Have natural conversations with domain experts while maintaining context.
 
 4. **Idea Evolution**
-```python:src/core/idea_processor.py
-startLine: 37
-endLine: 62
-```
+
 Tracks how your ideas develop and grow over time.
 
 ## How It Works
@@ -128,4 +122,4 @@ The system will automatically coordinate between agents to provide:
 
 ---
 
-Remember: Every great innovation started as a simple idea. Hephaestus is here to help you develop yours! 🚀
+Remember: Every great innovation started as a simple idea. Hephaestus is here to help you develop yours.
