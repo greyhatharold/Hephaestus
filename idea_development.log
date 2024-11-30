@@ -1,0 +1,739 @@
+2024-11-29 16:08:52,286 - root - INFO - Starting Fabricator GUI application
+2024-11-29 16:08:52,404 - main - INFO - Initializing IdeaDevelopmentSystem
+2024-11-29 16:08:52,419 - main - INFO - Initialized DomainAgent for domain: literature
+2024-11-29 16:08:52,424 - main - INFO - Initialized DomainAgent for domain: hard_science
+2024-11-29 16:08:52,428 - main - INFO - Initialized DomainAgent for domain: social_science
+2024-11-29 16:08:52,433 - main - INFO - Initialized DomainAgent for domain: technology
+2024-11-29 16:08:52,438 - main - INFO - Initialized DomainAgent for domain: business
+2024-11-29 16:08:52,443 - main - INFO - Initialized DomainAgent for domain: arts
+2024-11-29 16:08:52,447 - main - INFO - Initialized DomainAgent for domain: philosophy
+2024-11-29 16:08:52,452 - __main__ - INFO - Initializing GUI components
+2024-11-29 16:09:05,145 - __main__ - INFO - Processing input: A platform for counting digits
+2024-11-29 16:09:05,145 - main - INFO - Starting idea development process
+2024-11-29 16:09:06,953 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:09:06,959 - main - INFO - Classified idea domain as: technology
+2024-11-29 16:09:08,715 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:09:08,717 - main - INFO - Processing idea in domain technology
+2024-11-29 16:09:25,760 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:10:16,243 - root - INFO - Starting Fabricator GUI application
+2024-11-29 16:10:16,362 - main - INFO - Initializing IdeaDevelopmentSystem
+2024-11-29 16:10:16,376 - main - INFO - Initialized DomainAgent for domain: literature
+2024-11-29 16:10:16,381 - main - INFO - Initialized DomainAgent for domain: hard_science
+2024-11-29 16:10:16,385 - main - INFO - Initialized DomainAgent for domain: social_science
+2024-11-29 16:10:16,390 - main - INFO - Initialized DomainAgent for domain: technology
+2024-11-29 16:10:16,395 - main - INFO - Initialized DomainAgent for domain: business
+2024-11-29 16:10:16,400 - main - INFO - Initialized DomainAgent for domain: arts
+2024-11-29 16:10:16,405 - main - INFO - Initialized DomainAgent for domain: philosophy
+2024-11-29 16:10:16,409 - __main__ - INFO - Initializing GUI components
+2024-11-29 16:10:26,697 - __main__ - INFO - Processing input: A platform for counting digits
+2024-11-29 16:10:26,697 - main - INFO - Starting idea development process
+2024-11-29 16:10:28,659 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:10:28,666 - main - INFO - Classified idea domain as: technology
+2024-11-29 16:10:29,962 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:10:29,964 - main - INFO - Processing idea in domain technology
+2024-11-29 16:10:43,229 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:12:23,538 - __main__ - INFO - Starting application
+2024-11-29 16:12:23,538 - __main__ - INFO - Initializing IdeaDevelopmentSystem
+2024-11-29 16:12:23,556 - __main__ - INFO - Initialized DomainAgent for domain: literature
+2024-11-29 16:12:23,560 - __main__ - INFO - Initialized DomainAgent for domain: hard_science
+2024-11-29 16:12:23,565 - __main__ - INFO - Initialized DomainAgent for domain: social_science
+2024-11-29 16:12:23,570 - __main__ - INFO - Initialized DomainAgent for domain: technology
+2024-11-29 16:12:23,575 - __main__ - INFO - Initialized DomainAgent for domain: business
+2024-11-29 16:12:23,579 - __main__ - INFO - Initialized DomainAgent for domain: arts
+2024-11-29 16:12:23,584 - __main__ - INFO - Initialized DomainAgent for domain: philosophy
+2024-11-29 16:12:23,589 - __main__ - INFO - Processing example idea
+2024-11-29 16:12:23,589 - __main__ - INFO - Starting idea development process
+2024-11-29 16:12:25,373 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:12:25,377 - __main__ - INFO - Classified idea domain as: technology
+2024-11-29 16:12:26,642 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:12:26,643 - __main__ - INFO - Processing idea in domain technology
+2024-11-29 16:14:03,775 - root - INFO - Starting Fabricator GUI application
+2024-11-29 16:14:03,884 - main - INFO - Initializing IdeaDevelopmentSystem
+2024-11-29 16:14:03,898 - main - INFO - Initialized DomainAgent for domain: literature
+2024-11-29 16:14:03,903 - main - INFO - Initialized DomainAgent for domain: hard_science
+2024-11-29 16:14:03,908 - main - INFO - Initialized DomainAgent for domain: social_science
+2024-11-29 16:14:03,913 - main - INFO - Initialized DomainAgent for domain: technology
+2024-11-29 16:14:03,919 - main - INFO - Initialized DomainAgent for domain: business
+2024-11-29 16:14:03,925 - main - INFO - Initialized DomainAgent for domain: arts
+2024-11-29 16:14:03,930 - main - INFO - Initialized DomainAgent for domain: philosophy
+2024-11-29 16:14:03,934 - __main__ - INFO - Initializing GUI components
+2024-11-29 16:14:12,006 - root - INFO - Starting Fabricator GUI application
+2024-11-29 16:14:12,120 - main - INFO - Initializing IdeaDevelopmentSystem
+2024-11-29 16:14:12,133 - main - INFO - Initialized DomainAgent for domain: literature
+2024-11-29 16:14:12,138 - main - INFO - Initialized DomainAgent for domain: hard_science
+2024-11-29 16:14:12,142 - main - INFO - Initialized DomainAgent for domain: social_science
+2024-11-29 16:14:12,147 - main - INFO - Initialized DomainAgent for domain: technology
+2024-11-29 16:14:12,152 - main - INFO - Initialized DomainAgent for domain: business
+2024-11-29 16:14:12,156 - main - INFO - Initialized DomainAgent for domain: arts
+2024-11-29 16:14:12,161 - main - INFO - Initialized DomainAgent for domain: philosophy
+2024-11-29 16:14:12,165 - __main__ - INFO - Initializing GUI components
+2024-11-29 16:14:20,991 - __main__ - INFO - Processing input: A house made of cotton
+2024-11-29 16:14:20,992 - main - INFO - Starting idea development process
+2024-11-29 16:14:22,668 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:14:22,674 - main - INFO - Classified idea domain as: arts
+2024-11-29 16:14:24,088 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:14:24,090 - main - INFO - Processing idea in domain arts
+2024-11-29 16:14:34,873 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:18:35,606 - main - INFO - Initializing IdeaDevelopmentSystem
+2024-11-29 16:18:35,621 - main - INFO - Initialized DomainAgent for domain: literature
+2024-11-29 16:18:35,627 - main - INFO - Initialized DomainAgent for domain: hard_science
+2024-11-29 16:18:35,632 - main - INFO - Initialized DomainAgent for domain: social_science
+2024-11-29 16:18:35,637 - main - INFO - Initialized DomainAgent for domain: technology
+2024-11-29 16:18:35,643 - main - INFO - Initialized DomainAgent for domain: business
+2024-11-29 16:18:35,648 - main - INFO - Initialized DomainAgent for domain: arts
+2024-11-29 16:18:35,653 - main - INFO - Initialized DomainAgent for domain: philosophy
+2024-11-29 16:18:42,916 - main - INFO - Starting idea development process
+2024-11-29 16:19:12,805 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:19:12,813 - main - INFO - Classified idea domain as: arts
+2024-11-29 16:19:13,940 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:19:13,940 - main - INFO - Processing idea in domain arts
+2024-11-29 16:19:25,683 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:19:41,174 - main - INFO - Starting idea development process
+2024-11-29 16:19:43,435 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:19:43,437 - main - INFO - Classified idea domain as: arts
+2024-11-29 16:19:44,700 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:19:44,702 - main - INFO - Processing idea in domain arts
+2024-11-29 16:19:57,155 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:23:10,472 - main - INFO - Initializing IdeaDevelopmentSystem
+2024-11-29 16:23:10,488 - main - INFO - Initialized DomainAgent for domain: literature
+2024-11-29 16:23:10,493 - main - INFO - Initialized DomainAgent for domain: hard_science
+2024-11-29 16:23:10,498 - main - INFO - Initialized DomainAgent for domain: social_science
+2024-11-29 16:23:10,504 - main - INFO - Initialized DomainAgent for domain: technology
+2024-11-29 16:23:10,509 - main - INFO - Initialized DomainAgent for domain: business
+2024-11-29 16:23:10,514 - main - INFO - Initialized DomainAgent for domain: arts
+2024-11-29 16:23:10,519 - main - INFO - Initialized DomainAgent for domain: philosophy
+2024-11-29 16:23:21,369 - main - INFO - Starting idea development process
+2024-11-29 16:23:23,140 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:23:23,150 - main - INFO - Classified idea domain as: social_science
+2024-11-29 16:23:24,508 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:23:24,510 - main - INFO - Processing idea in domain social_science
+2024-11-29 16:23:37,105 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:23:39,129 - main - INFO - Starting idea development process
+2024-11-29 16:23:41,099 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:23:41,102 - main - INFO - Classified idea domain as: social_science
+2024-11-29 16:23:42,437 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:23:42,439 - main - INFO - Processing idea in domain social_science
+2024-11-29 16:23:53,447 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:25:27,756 - main - INFO - Initializing IdeaDevelopmentSystem
+2024-11-29 16:25:27,771 - main - INFO - Initialized DomainAgent for domain: literature
+2024-11-29 16:25:27,777 - main - INFO - Initialized DomainAgent for domain: hard_science
+2024-11-29 16:25:27,782 - main - INFO - Initialized DomainAgent for domain: social_science
+2024-11-29 16:25:27,788 - main - INFO - Initialized DomainAgent for domain: technology
+2024-11-29 16:25:27,793 - main - INFO - Initialized DomainAgent for domain: business
+2024-11-29 16:25:27,798 - main - INFO - Initialized DomainAgent for domain: arts
+2024-11-29 16:25:27,803 - main - INFO - Initialized DomainAgent for domain: philosophy
+2024-11-29 16:25:40,108 - main - INFO - Initializing IdeaDevelopmentSystem
+2024-11-29 16:25:40,125 - main - INFO - Initialized DomainAgent for domain: literature
+2024-11-29 16:25:40,130 - main - INFO - Initialized DomainAgent for domain: hard_science
+2024-11-29 16:25:40,135 - main - INFO - Initialized DomainAgent for domain: social_science
+2024-11-29 16:25:40,141 - main - INFO - Initialized DomainAgent for domain: technology
+2024-11-29 16:25:40,146 - main - INFO - Initialized DomainAgent for domain: business
+2024-11-29 16:25:40,151 - main - INFO - Initialized DomainAgent for domain: arts
+2024-11-29 16:25:40,157 - main - INFO - Initialized DomainAgent for domain: philosophy
+2024-11-29 16:25:46,919 - main - INFO - Starting idea development process
+2024-11-29 16:25:48,683 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:25:48,691 - main - INFO - Classified idea domain as: technology
+2024-11-29 16:25:50,222 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:25:50,225 - main - INFO - Processing idea in domain technology
+2024-11-29 16:26:00,858 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:26:06,791 - main - INFO - Starting idea development process
+2024-11-29 16:26:08,551 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:26:08,553 - main - INFO - Classified idea domain as: technology
+2024-11-29 16:26:09,676 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:26:09,678 - main - INFO - Processing idea in domain technology
+2024-11-29 16:26:20,223 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:30:50,459 - main - INFO - Initializing IdeaDevelopmentSystem
+2024-11-29 16:30:50,481 - main - INFO - Initialized DomainAgent for domain: literature
+2024-11-29 16:30:50,491 - main - INFO - Initialized DomainAgent for domain: hard_science
+2024-11-29 16:30:50,501 - main - INFO - Initialized DomainAgent for domain: social_science
+2024-11-29 16:30:50,511 - main - INFO - Initialized DomainAgent for domain: technology
+2024-11-29 16:30:50,521 - main - INFO - Initialized DomainAgent for domain: business
+2024-11-29 16:30:50,531 - main - INFO - Initialized DomainAgent for domain: arts
+2024-11-29 16:30:50,540 - main - INFO - Initialized DomainAgent for domain: philosophy
+2024-11-29 16:30:58,673 - main - INFO - Starting idea development process
+2024-11-29 16:31:00,718 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:31:00,724 - main - INFO - Classified idea domain as: hard_science
+2024-11-29 16:31:02,196 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:31:02,199 - main - INFO - Processing idea in domain hard_science
+2024-11-29 16:31:12,878 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:31:14,949 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2024-11-29 16:31:14,951 - main - ERROR - Error generating Mermaid diagram: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}}
+Traceback (most recent call last):
+  File "/Users/griffinstrier/Projects/Fabricator/src/main.py", line 95, in generate_mermaid_diagram
+    response = self.claude.messages.create(
+        model="claude-3-sonnet-20240229",
+    ...<5 lines>...
+        }]
+    )
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/anthropic/_utils/_utils.py", line 275, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/anthropic/resources/messages.py", line 888, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/v1/messages",
+        ^^^^^^^^^^^^^^^
+    ...<22 lines>...
+        stream_cls=Stream[RawMessageStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/anthropic/_base_client.py", line 1279, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/anthropic/_base_client.py", line 956, in request
+    return self._request(
+           ~~~~~~~~~~~~~^
+        cast_to=cast_to,
+        ^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        retries_taken=retries_taken,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/anthropic/_base_client.py", line 1060, in _request
+    raise self._make_status_error_from_response(err.response) from None
+anthropic.AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}}
+2024-11-29 16:31:17,052 - main - INFO - Starting idea development process
+2024-11-29 16:31:18,816 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:31:18,819 - main - INFO - Classified idea domain as: hard_science
+2024-11-29 16:31:21,067 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:31:21,070 - main - INFO - Processing idea in domain hard_science
+2024-11-29 16:31:31,443 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:31:33,013 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2024-11-29 16:31:33,014 - main - ERROR - Error generating Mermaid diagram: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}}
+Traceback (most recent call last):
+  File "/Users/griffinstrier/Projects/Fabricator/src/main.py", line 95, in generate_mermaid_diagram
+    response = self.claude.messages.create(
+        model="claude-3-sonnet-20240229",
+    ...<5 lines>...
+        }]
+    )
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/anthropic/_utils/_utils.py", line 275, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/anthropic/resources/messages.py", line 888, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/v1/messages",
+        ^^^^^^^^^^^^^^^
+    ...<22 lines>...
+        stream_cls=Stream[RawMessageStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/anthropic/_base_client.py", line 1279, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/anthropic/_base_client.py", line 956, in request
+    return self._request(
+           ~~~~~~~~~~~~~^
+        cast_to=cast_to,
+        ^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        retries_taken=retries_taken,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/anthropic/_base_client.py", line 1060, in _request
+    raise self._make_status_error_from_response(err.response) from None
+anthropic.AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}}
+2024-11-29 16:33:03,187 - main - INFO - Initializing IdeaDevelopmentSystem
+2024-11-29 16:33:03,208 - main - INFO - Initialized DomainAgent for domain: literature
+2024-11-29 16:33:03,218 - main - INFO - Initialized DomainAgent for domain: hard_science
+2024-11-29 16:33:03,228 - main - INFO - Initialized DomainAgent for domain: social_science
+2024-11-29 16:33:03,238 - main - INFO - Initialized DomainAgent for domain: technology
+2024-11-29 16:33:03,249 - main - INFO - Initialized DomainAgent for domain: business
+2024-11-29 16:33:03,258 - main - INFO - Initialized DomainAgent for domain: arts
+2024-11-29 16:33:03,268 - main - INFO - Initialized DomainAgent for domain: philosophy
+2024-11-29 16:33:10,113 - main - INFO - Starting idea development process
+2024-11-29 16:33:12,104 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:33:12,113 - main - INFO - Classified idea domain as: arts
+2024-11-29 16:33:13,174 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:33:13,175 - main - INFO - Processing idea in domain arts
+2024-11-29 16:33:25,518 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:33:27,019 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2024-11-29 16:33:27,021 - main - ERROR - Error generating Mermaid diagram with Claude: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}}
+Traceback (most recent call last):
+  File "/Users/griffinstrier/Projects/Fabricator/src/main.py", line 95, in generate_mermaid_diagram
+    response = self.claude.messages.create(
+        model="claude-3-sonnet-20240229",
+    ...<5 lines>...
+        }]
+    )
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/anthropic/_utils/_utils.py", line 275, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/anthropic/resources/messages.py", line 888, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/v1/messages",
+        ^^^^^^^^^^^^^^^
+    ...<22 lines>...
+        stream_cls=Stream[RawMessageStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/anthropic/_base_client.py", line 1279, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/anthropic/_base_client.py", line 956, in request
+    return self._request(
+           ~~~~~~~~~~~~~^
+        cast_to=cast_to,
+        ^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        retries_taken=retries_taken,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/anthropic/_base_client.py", line 1060, in _request
+    raise self._make_status_error_from_response(err.response) from None
+anthropic.AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}}
+2024-11-29 16:33:35,223 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:33:37,206 - main - INFO - Starting idea development process
+2024-11-29 16:33:38,998 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:33:39,000 - main - INFO - Classified idea domain as: arts
+2024-11-29 16:33:40,330 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:33:40,332 - main - INFO - Processing idea in domain arts
+2024-11-29 16:33:53,459 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:33:58,051 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2024-11-29 16:33:58,052 - main - ERROR - Error generating Mermaid diagram with Claude: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}}
+Traceback (most recent call last):
+  File "/Users/griffinstrier/Projects/Fabricator/src/main.py", line 95, in generate_mermaid_diagram
+    response = self.claude.messages.create(
+        model="claude-3-sonnet-20240229",
+    ...<5 lines>...
+        }]
+    )
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/anthropic/_utils/_utils.py", line 275, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/anthropic/resources/messages.py", line 888, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/v1/messages",
+        ^^^^^^^^^^^^^^^
+    ...<22 lines>...
+        stream_cls=Stream[RawMessageStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/anthropic/_base_client.py", line 1279, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/anthropic/_base_client.py", line 956, in request
+    return self._request(
+           ~~~~~~~~~~~~~^
+        cast_to=cast_to,
+        ^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        retries_taken=retries_taken,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/anthropic/_base_client.py", line 1060, in _request
+    raise self._make_status_error_from_response(err.response) from None
+anthropic.AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}}
+2024-11-29 16:34:02,850 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:44:49,832 - main - INFO - Initializing IdeaDevelopmentSystem
+2024-11-29 16:44:49,853 - main - INFO - Initialized DomainAgent for domain: literature
+2024-11-29 16:44:49,864 - main - INFO - Initialized DomainAgent for domain: hard_science
+2024-11-29 16:44:49,875 - main - INFO - Initialized DomainAgent for domain: social_science
+2024-11-29 16:44:49,888 - main - INFO - Initialized DomainAgent for domain: technology
+2024-11-29 16:44:49,898 - main - INFO - Initialized DomainAgent for domain: business
+2024-11-29 16:44:49,908 - main - INFO - Initialized DomainAgent for domain: arts
+2024-11-29 16:44:49,918 - main - INFO - Initialized DomainAgent for domain: philosophy
+2024-11-29 16:45:07,301 - main - INFO - Starting idea development process
+2024-11-29 16:45:09,148 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:45:09,156 - main - INFO - Classified idea domain as: arts
+2024-11-29 16:45:10,393 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:45:10,395 - main - INFO - Processing idea in domain arts
+2024-11-29 16:45:34,659 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:45:36,094 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2024-11-29 16:45:36,096 - main - ERROR - Error generating Mermaid diagram with Claude: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}}
+Traceback (most recent call last):
+  File "/Users/griffinstrier/Projects/Fabricator/src/main.py", line 95, in generate_mermaid_diagram
+    response = self.claude.messages.create(
+        model="claude-3-sonnet-20240229",
+    ...<5 lines>...
+        }]
+    )
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/anthropic/_utils/_utils.py", line 275, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/anthropic/resources/messages.py", line 888, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/v1/messages",
+        ^^^^^^^^^^^^^^^
+    ...<22 lines>...
+        stream_cls=Stream[RawMessageStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/anthropic/_base_client.py", line 1279, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/anthropic/_base_client.py", line 956, in request
+    return self._request(
+           ~~~~~~~~~~~~~^
+        cast_to=cast_to,
+        ^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        retries_taken=retries_taken,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/anthropic/_base_client.py", line 1060, in _request
+    raise self._make_status_error_from_response(err.response) from None
+anthropic.AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}}
+2024-11-29 16:45:50,372 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:45:53,200 - main - INFO - Starting idea development process
+2024-11-29 16:45:55,092 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:45:55,093 - main - INFO - Classified idea domain as: arts
+2024-11-29 16:45:56,353 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:45:56,355 - main - INFO - Processing idea in domain arts
+2024-11-29 16:46:08,622 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:46:10,192 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2024-11-29 16:46:10,193 - main - ERROR - Error generating Mermaid diagram with Claude: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}}
+Traceback (most recent call last):
+  File "/Users/griffinstrier/Projects/Fabricator/src/main.py", line 95, in generate_mermaid_diagram
+    response = self.claude.messages.create(
+        model="claude-3-sonnet-20240229",
+    ...<5 lines>...
+        }]
+    )
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/anthropic/_utils/_utils.py", line 275, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/anthropic/resources/messages.py", line 888, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/v1/messages",
+        ^^^^^^^^^^^^^^^
+    ...<22 lines>...
+        stream_cls=Stream[RawMessageStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/anthropic/_base_client.py", line 1279, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/anthropic/_base_client.py", line 956, in request
+    return self._request(
+           ~~~~~~~~~~~~~^
+        cast_to=cast_to,
+        ^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        retries_taken=retries_taken,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/anthropic/_base_client.py", line 1060, in _request
+    raise self._make_status_error_from_response(err.response) from None
+anthropic.AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}}
+2024-11-29 16:46:17,680 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:49:07,094 - main - INFO - Initializing IdeaDevelopmentSystem
+2024-11-29 16:49:07,115 - main - INFO - Initialized DomainAgent for domain: literature
+2024-11-29 16:49:07,125 - main - INFO - Initialized DomainAgent for domain: hard_science
+2024-11-29 16:49:07,135 - main - INFO - Initialized DomainAgent for domain: social_science
+2024-11-29 16:49:07,146 - main - INFO - Initialized DomainAgent for domain: technology
+2024-11-29 16:49:07,156 - main - INFO - Initialized DomainAgent for domain: business
+2024-11-29 16:49:07,165 - main - INFO - Initialized DomainAgent for domain: arts
+2024-11-29 16:49:07,175 - main - INFO - Initialized DomainAgent for domain: philosophy
+2024-11-29 16:49:14,677 - main - INFO - Starting idea development process
+2024-11-29 16:49:16,733 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:49:16,743 - main - INFO - Classified idea domain as: arts
+2024-11-29 16:49:18,266 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:49:18,269 - main - INFO - Processing idea in domain arts
+2024-11-29 16:49:29,861 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:49:31,709 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2024-11-29 16:49:31,711 - main - ERROR - Error generating Mermaid diagram with Claude: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}}
+Traceback (most recent call last):
+  File "/Users/griffinstrier/Projects/Fabricator/src/main.py", line 95, in generate_mermaid_diagram
+    response = self.claude.messages.create(
+        model="claude-3-sonnet-20240229",
+    ...<5 lines>...
+        }]
+    )
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/anthropic/_utils/_utils.py", line 275, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/anthropic/resources/messages.py", line 888, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/v1/messages",
+        ^^^^^^^^^^^^^^^
+    ...<22 lines>...
+        stream_cls=Stream[RawMessageStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/anthropic/_base_client.py", line 1279, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/anthropic/_base_client.py", line 956, in request
+    return self._request(
+           ~~~~~~~~~~~~~^
+        cast_to=cast_to,
+        ^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        retries_taken=retries_taken,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/anthropic/_base_client.py", line 1060, in _request
+    raise self._make_status_error_from_response(err.response) from None
+anthropic.AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}}
+2024-11-29 16:49:35,704 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:49:39,107 - main - INFO - Starting idea development process
+2024-11-29 16:49:41,005 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:49:41,005 - main - INFO - Classified idea domain as: arts
+2024-11-29 16:49:42,243 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:49:42,245 - main - INFO - Processing idea in domain arts
+2024-11-29 16:49:54,546 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:49:56,019 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2024-11-29 16:49:56,021 - main - ERROR - Error generating Mermaid diagram with Claude: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}}
+Traceback (most recent call last):
+  File "/Users/griffinstrier/Projects/Fabricator/src/main.py", line 95, in generate_mermaid_diagram
+    response = self.claude.messages.create(
+        model="claude-3-sonnet-20240229",
+    ...<5 lines>...
+        }]
+    )
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/anthropic/_utils/_utils.py", line 275, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/anthropic/resources/messages.py", line 888, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/v1/messages",
+        ^^^^^^^^^^^^^^^
+    ...<22 lines>...
+        stream_cls=Stream[RawMessageStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/anthropic/_base_client.py", line 1279, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/anthropic/_base_client.py", line 956, in request
+    return self._request(
+           ~~~~~~~~~~~~~^
+        cast_to=cast_to,
+        ^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        retries_taken=retries_taken,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/anthropic/_base_client.py", line 1060, in _request
+    raise self._make_status_error_from_response(err.response) from None
+anthropic.AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}}
+2024-11-29 16:50:01,675 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:52:07,958 - main - INFO - Initializing IdeaDevelopmentSystem
+2024-11-29 16:52:07,974 - main - INFO - Initialized DomainAgent for domain: literature
+2024-11-29 16:52:07,979 - main - INFO - Initialized DomainAgent for domain: hard_science
+2024-11-29 16:52:07,985 - main - INFO - Initialized DomainAgent for domain: social_science
+2024-11-29 16:52:07,990 - main - INFO - Initialized DomainAgent for domain: technology
+2024-11-29 16:52:07,996 - main - INFO - Initialized DomainAgent for domain: business
+2024-11-29 16:52:08,001 - main - INFO - Initialized DomainAgent for domain: arts
+2024-11-29 16:52:08,006 - main - INFO - Initialized DomainAgent for domain: philosophy
+2024-11-29 16:52:17,325 - main - INFO - Starting idea development process
+2024-11-29 16:52:20,062 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:52:20,069 - main - INFO - Classified idea domain as: technology
+2024-11-29 16:52:21,430 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:52:21,434 - main - INFO - Processing idea in domain technology
+2024-11-29 16:52:32,682 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:52:46,001 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:52:48,090 - main - INFO - Starting idea development process
+2024-11-29 16:52:50,128 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:52:50,130 - main - INFO - Classified idea domain as: technology
+2024-11-29 16:52:51,287 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:52:51,289 - main - INFO - Processing idea in domain technology
+2024-11-29 16:53:07,626 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:53:21,565 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:56:10,586 - main - INFO - Initializing IdeaDevelopmentSystem
+2024-11-29 16:56:10,602 - main - INFO - Initialized DomainAgent for domain: literature
+2024-11-29 16:56:10,608 - main - INFO - Initialized DomainAgent for domain: hard_science
+2024-11-29 16:56:10,613 - main - INFO - Initialized DomainAgent for domain: social_science
+2024-11-29 16:56:10,618 - main - INFO - Initialized DomainAgent for domain: technology
+2024-11-29 16:56:10,624 - main - INFO - Initialized DomainAgent for domain: business
+2024-11-29 16:56:10,630 - main - INFO - Initialized DomainAgent for domain: arts
+2024-11-29 16:56:10,635 - main - INFO - Initialized DomainAgent for domain: philosophy
+2024-11-29 16:56:14,164 - main - INFO - Starting idea development process
+2024-11-29 16:56:17,819 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:56:17,827 - main - INFO - Classified idea domain as: arts
+2024-11-29 16:56:19,999 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:56:20,000 - main - INFO - Processing idea in domain arts
+2024-11-29 16:56:32,678 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:56:41,379 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:56:41,434 - main - ERROR - Error generating diagram: failed to execute PosixPath('dot'), make sure the Graphviz executables are on your systems' PATH
+Traceback (most recent call last):
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/graphviz/backend/execute.py", line 78, in run_check
+    proc = subprocess.run(cmd, **kwargs)
+  File "/opt/homebrew/Cellar/python@3.13/3.13.0_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py", line 554, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.0_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py", line 1036, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.0_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py", line 1966, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: PosixPath('dot')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/griffinstrier/Projects/Fabricator/src/main.py", line 125, in generate_diagram
+    dot.render(tmp.name, format='png', cleanup=True)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/graphviz/_tools.py", line 171, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/graphviz/rendering.py", line 122, in render
+    rendered = self._render(*args, **kwargs)
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/graphviz/_tools.py", line 171, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/graphviz/backend/rendering.py", line 326, in render
+    execute.run_check(cmd,
+    ~~~~~~~~~~~~~~~~~^^^^^
+                      cwd=filepath.parent if filepath.parent.parts else None,
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                      quiet=quiet,
+                      ^^^^^^^^^^^^
+                      capture_output=True)
+                      ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/graphviz/backend/execute.py", line 81, in run_check
+    raise ExecutableNotFound(cmd) from e
+graphviz.backend.execute.ExecutableNotFound: failed to execute PosixPath('dot'), make sure the Graphviz executables are on your systems' PATH
+2024-11-29 16:56:43,555 - main - INFO - Starting idea development process
+2024-11-29 16:56:45,475 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:56:45,478 - main - INFO - Classified idea domain as: arts
+2024-11-29 16:56:46,881 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:56:46,884 - main - INFO - Processing idea in domain arts
+2024-11-29 16:56:57,920 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:57:14,175 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 16:57:14,221 - main - ERROR - Error generating diagram: failed to execute PosixPath('dot'), make sure the Graphviz executables are on your systems' PATH
+Traceback (most recent call last):
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/graphviz/backend/execute.py", line 78, in run_check
+    proc = subprocess.run(cmd, **kwargs)
+  File "/opt/homebrew/Cellar/python@3.13/3.13.0_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py", line 554, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.0_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py", line 1036, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.0_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py", line 1966, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: PosixPath('dot')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/griffinstrier/Projects/Fabricator/src/main.py", line 125, in generate_diagram
+    dot.render(tmp.name, format='png', cleanup=True)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/graphviz/_tools.py", line 171, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/graphviz/rendering.py", line 122, in render
+    rendered = self._render(*args, **kwargs)
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/graphviz/_tools.py", line 171, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/graphviz/backend/rendering.py", line 326, in render
+    execute.run_check(cmd,
+    ~~~~~~~~~~~~~~~~~^^^^^
+                      cwd=filepath.parent if filepath.parent.parts else None,
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                      quiet=quiet,
+                      ^^^^^^^^^^^^
+                      capture_output=True)
+                      ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/griffinstrier/Projects/Fabricator/.venv/lib/python3.13/site-packages/graphviz/backend/execute.py", line 81, in run_check
+    raise ExecutableNotFound(cmd) from e
+graphviz.backend.execute.ExecutableNotFound: failed to execute PosixPath('dot'), make sure the Graphviz executables are on your systems' PATH
+2024-11-29 16:57:16,111 - __main__ - ERROR - Error displaying diagram: argument should be a bytes-like object or ASCII string, not 'tuple'
+2024-11-29 21:01:53,309 - main - INFO - Initializing IdeaDevelopmentSystem
+2024-11-29 21:01:53,325 - main - INFO - Initialized DomainAgent for domain: literature
+2024-11-29 21:01:53,330 - main - INFO - Initialized DomainAgent for domain: hard_science
+2024-11-29 21:01:53,336 - main - INFO - Initialized DomainAgent for domain: social_science
+2024-11-29 21:01:53,341 - main - INFO - Initialized DomainAgent for domain: technology
+2024-11-29 21:01:53,346 - main - INFO - Initialized DomainAgent for domain: business
+2024-11-29 21:01:53,352 - main - INFO - Initialized DomainAgent for domain: arts
+2024-11-29 21:01:53,359 - main - INFO - Initialized DomainAgent for domain: philosophy
+2024-11-29 21:02:44,058 - main - INFO - Starting idea development process
+2024-11-29 21:02:45,282 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 21:02:45,291 - main - INFO - Classified idea domain as: technology
+2024-11-29 21:02:45,864 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 21:02:45,865 - main - INFO - Processing idea in domain technology
+2024-11-29 21:02:46,608 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 21:02:57,329 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 21:03:05,496 - main - INFO - Starting idea development process
+2024-11-29 21:03:06,184 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 21:03:06,187 - main - INFO - Classified idea domain as: technology
+2024-11-29 21:03:06,909 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 21:03:06,912 - main - INFO - Processing idea in domain technology
+2024-11-29 21:03:07,574 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 21:03:10,315 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 21:03:23,706 - __main__ - ERROR - Error displaying diagram: argument should be a bytes-like object or ASCII string, not 'tuple'
+2024-11-29 21:04:08,753 - main - INFO - Starting idea development process
+2024-11-29 21:04:09,182 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 21:04:09,184 - main - INFO - Classified idea domain as: technology
+2024-11-29 21:04:09,932 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 21:04:09,934 - main - INFO - Processing idea in domain technology
+2024-11-29 21:04:21,181 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 21:04:32,971 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 21:04:33,142 - main - INFO - Starting idea development process
+2024-11-29 21:04:33,689 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 21:04:33,691 - main - INFO - Classified idea domain as: technology
+2024-11-29 21:04:34,303 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 21:04:34,306 - main - INFO - Processing idea in domain technology
+2024-11-29 21:04:42,764 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 21:04:57,015 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 21:04:57,166 - main - INFO - Starting idea development process
+2024-11-29 21:04:57,622 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 21:04:57,624 - main - INFO - Classified idea domain as: technology
+2024-11-29 21:04:58,092 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 21:04:58,092 - main - INFO - Processing idea in domain technology
+2024-11-29 21:05:05,168 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 21:05:14,038 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 21:05:14,208 - main - INFO - Starting idea development process
+2024-11-29 21:05:14,662 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 21:05:14,664 - main - INFO - Classified idea domain as: technology
+2024-11-29 21:05:15,180 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 21:05:15,181 - main - INFO - Processing idea in domain technology
+2024-11-29 21:05:24,370 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 21:05:37,686 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 21:05:37,854 - main - INFO - Starting idea development process
+2024-11-29 21:05:38,402 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 21:05:38,403 - main - INFO - Classified idea domain as: technology
+2024-11-29 21:05:39,426 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 21:05:39,427 - main - INFO - Processing idea in domain technology
+2024-11-29 21:49:48,586 - main - INFO - Initializing IdeaDevelopmentSystem
+2024-11-29 21:49:48,603 - main - INFO - Initialized DomainAgent for domain: literature
+2024-11-29 21:49:48,609 - main - INFO - Initialized DomainAgent for domain: hard_science
+2024-11-29 21:49:48,614 - main - INFO - Initialized DomainAgent for domain: social_science
+2024-11-29 21:49:48,620 - main - INFO - Initialized DomainAgent for domain: technology
+2024-11-29 21:49:48,625 - main - INFO - Initialized DomainAgent for domain: business
+2024-11-29 21:49:48,630 - main - INFO - Initialized DomainAgent for domain: arts
+2024-11-29 21:49:48,635 - main - INFO - Initialized DomainAgent for domain: philosophy
+2024-11-29 21:49:56,743 - main - INFO - Starting idea development process
+2024-11-29 21:49:57,690 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 21:49:57,692 - main - INFO - Classified idea domain as: technology
+2024-11-29 21:49:58,184 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 21:49:58,187 - main - INFO - Processing idea in domain technology
+2024-11-29 21:50:05,342 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 21:50:17,595 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 21:51:25,617 - main - INFO - Starting idea development process
+2024-11-29 21:51:26,099 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 21:51:26,100 - main - INFO - Classified idea domain as: technology
+2024-11-29 21:51:26,921 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 21:51:26,924 - main - INFO - Processing idea in domain technology
+2024-11-29 21:51:35,520 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-11-29 21:51:49,253 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
