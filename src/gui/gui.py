@@ -12,6 +12,7 @@ from src.gui.layers import LayerSystem
 from .theme import UITheme, DomainThemes
 from .animations import FloatingAnimation
 from src.agents.agent_factory import AgentFactory
+from .agent_tree import AgentTree
 
 class ProgressIndicator:
     def __init__(self, parent, theme: UITheme):
@@ -109,6 +110,7 @@ class Layer3DGUI:
         self.progress = ProgressIndicator(self.root, self.current_theme)
         self.floating_animation = None  # Will be initialized in setup_prompt_layer
         self.selected_supporting_domains = []  # Track selected supporting domains
+        self.agent_tree = AgentTree()
 
     def setup_layers(self):
         # Initialize prompt layer
@@ -291,62 +293,58 @@ class Layer3DGUI:
         for widget in layer_frame.winfo_children():
             widget.destroy()
         
-        results_frame = ctk.CTkFrame(layer_frame, fg_color='transparent')
+        # Create main content frame
+        content_frame = ctk.CTkFrame(layer_frame, fg_color='transparent')
+        content_frame.pack(expand=True, fill='both', padx=20, pady=20)
         
-        # Display formatted results
+        # Title
         ctk.CTkLabel(
-            results_frame,
+            content_frame,
             text=f"Ideas for: {results['idea']['concept']}",
             font=self.current_theme.font,
             text_color=self.current_theme.text_color
-        ).pack(pady=20)
+        ).pack(pady=(0, 20))
         
-        # Create scrollable text area
+        # Create horizontal layout frame
+        horizontal_frame = ctk.CTkFrame(content_frame, fg_color='transparent')
+        horizontal_frame.pack(expand=True, fill='both')
+        
+        # Left side - Text content
+        text_frame = ctk.CTkFrame(horizontal_frame, fg_color='transparent')
+        text_frame.pack(side='left', fill='both', expand=True, padx=(0, 10))
+        
+        # Text area
         text_area = ctk.CTkTextbox(
-            results_frame,
-            width=800,
+            text_frame,
+            width=600,  # Adjusted width
             height=500,
             font=self.current_theme.font
         )
-        text_area.pack(pady=20)
+        text_area.pack(expand=True, fill='both')
         
         # Format and insert results
         formatted_text = self.format_results(results)
         text_area.insert('1.0', formatted_text)
         text_area.configure(state='disabled')
         
-        # Add concept image if available
+        # Right side - Image (if available)
         if results['development'].get('concept_image'):
             try:
                 img_data = base64.b64decode(results['development']['concept_image'])
                 img = Image.open(io.BytesIO(img_data))
                 
-                # Create a frame for side-by-side layout
-                content_frame = ctk.CTkFrame(
-                    results_frame,
-                    fg_color='transparent'
-                )
-                content_frame.pack(fill='both', expand=True, padx=20)
-                
-                # Left side for text
-                text_frame = ctk.CTkFrame(
-                    content_frame,
-                    fg_color='transparent'
-                )
-                text_frame.pack(side='left', fill='both', expand=True, padx=(0, 10))
-                
-                # Right side for image
+                # Create image frame
                 image_frame = ctk.CTkFrame(
-                    content_frame,
+                    horizontal_frame,
                     fg_color=self.current_theme.bg_secondary,
                     border_width=1,
                     border_color=self.current_theme.border_color
                 )
-                image_frame.pack(side='right', padx=(10, 0))
+                image_frame.pack(side='right', fill='y', padx=(10, 0))
                 
-                # Calculate appropriate image size based on window dimensions
-                max_width = min(self.window_width // 3, 400)  # Max 1/3 of window width or 400px
-                max_height = min(self.window_height // 2, 400)  # Max 1/2 of window height or 400px
+                # Calculate appropriate image size
+                max_width = min(self.window_width // 3, 400)
+                max_height = min(self.window_height // 2, 400)
                 
                 # Resize image while maintaining aspect ratio
                 img_width, img_height = img.size
@@ -354,12 +352,13 @@ class Layer3DGUI:
                 new_size = (int(img_width * scale), int(img_height * scale))
                 img = img.resize(new_size, Image.Resampling.LANCZOS)
                 
+                # Display image
                 photo = ImageTk.PhotoImage(img)
                 img_label = ttk.Label(image_frame, image=photo)
                 img_label.image = photo
                 img_label.pack(pady=10, padx=10)
                 
-                # Add image caption
+                # Add caption
                 ctk.CTkLabel(
                     image_frame,
                     text="Concept Visualization",
@@ -372,12 +371,12 @@ class Layer3DGUI:
         
         # Modify the button to go to next steps instead of restart
         ctk.CTkButton(
-            results_frame,
+            content_frame,
             text="View Implementation Plan",
             command=lambda: self.show_next_steps(results)
         ).pack(pady=20)
         
-        results_frame.place(relx=0.5, rely=0.5, anchor='center')
+        content_frame.place(relx=0.5, rely=0.5, anchor='center')
 
     def format_results(self, results):
         development = results['development']
@@ -612,37 +611,13 @@ Implementation Steps:
                 self.entry_frame.place(relx=0.5, rely=0.5, anchor='center')
 
     def show_chat_layer(self):
-        # Get chat layer
+        """Show chat interface with selected agent"""
         chat_layer = self.layer_system.layers[4]
-        
-        # Set up callbacks
-        chat_layer.on_back_pressed = lambda: self.transition_to_layer(0)
-        chat_layer.on_agent_changed = self._change_chat_agent
-        
-        # Set initial agent if none exists
-        if not hasattr(self, 'current_agent'):
-            domain = self.initial_result['idea']['domain'] if hasattr(self, 'initial_result') else DomainType.TECHNOLOGY
-            self.current_agent = AgentFactory.create_agent(DomainType(domain))
-            chat_layer.agent_var.set(domain.value)
-        
-        # Load existing chat history
-        chat_history = chat_layer.chat_manager.get_session_history()
-        
-        # Clear previous messages
-        chat_layer.chat_history.configure(state='normal')
-        chat_layer.chat_history.delete('1.0', 'end')
-        chat_layer.chat_history.configure(state='disabled')
-        
-        # Display existing messages
-        for message in chat_history:
-            chat_layer.add_message(message.sender, message.content)
-        
-        # Update the Return key binding for the new textbox
-        chat_layer.chat_input.bind('<Return>', lambda e: self._handle_chat_return(e))
-        
+        chat_layer.on_agent_changed = self._on_agent_changed
+        chat_layer.on_back_pressed = lambda: self.transition_to_layer(2)
         self.transition_to_layer(4)
 
-    def _change_chat_agent(self, domain: DomainType):
+    def _on_agent_changed(self, domain: DomainType):
         """Handle changing the current chat agent"""
         self.current_agent = AgentFactory.create_agent(domain)
         # Update theme to match new agent's domain

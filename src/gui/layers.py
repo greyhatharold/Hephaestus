@@ -5,6 +5,7 @@ from src.data.data_manager import DataManager
 from src.agents.agent_factory import AgentFactory
 from src.core.domain_types import DomainType
 import customtkinter as ctk
+from .agent_tree import AgentTree, AgentTreeNode
 
 class Layer:
     def __init__(self, root, theme: UITheme, window_width: int, window_height: int):
@@ -72,10 +73,9 @@ class ChatLayer(Layer):
         super().__init__(root, theme, window_width, window_height)
         self.chat_manager = ChatHistoryManager(data_manager)
         self.theme = theme
-        
-        # Initialize chat components
+        self.agent_tree = AgentTree()
         self.setup_chat_interface()
-        
+    
     def setup_chat_interface(self):
         # Main chat container
         chat_container = ctk.CTkFrame(
@@ -93,26 +93,15 @@ class ChatLayer(Layer):
         )
         agent_frame.pack(pady=(0, 10))
         
-        ctk.CTkLabel(
+        self.agent_tree_button = ctk.CTkButton(
             agent_frame,
-            text="Select Agent:",
-            font=self.theme.font,
-            text_color=self.theme.text_color
-        ).pack(side='left', padx=(0, 10))
-        
-        # Create agent selection dropdown
-        self.agent_var = tk.StringVar()
-        self.agent_dropdown = ctk.CTkOptionMenu(
-            agent_frame,
-            values=[domain.value for domain in AgentFactory.get_available_domains()],
-            variable=self.agent_var,
-            command=self._on_agent_selected,
+            text="Agent Tree",
+            command=self._show_agent_tree,
             font=self.theme.font,
             fg_color=self.theme.accent_color,
-            button_color=self.theme.accent_color,
-            button_hover_color=self.theme.secondary_color
+            hover_color=self.theme.accent_hover
         )
-        self.agent_dropdown.pack(side='left')
+        self.agent_tree_button.pack(side='left')
         
         # Chat history display
         self.chat_history = ctk.CTkTextbox(
@@ -186,10 +175,50 @@ class ChatLayer(Layer):
     def get_message(self):
         return self.chat_input.get("1.0", "end-1c").strip()
 
-    def _on_agent_selected(self, domain_value: str):
-        """Callback when a new agent is selected"""
+    def _show_agent_tree(self):
+        """Show agent tree selection dialog"""
+        tree_window = ctk.CTkToplevel(self.root)
+        tree_window.title("Select Agent")
+        tree_window.geometry("400x500")
+        
+        def create_tree_node(parent, node: AgentTreeNode):
+            frame = ctk.CTkFrame(parent, fg_color='transparent')
+            frame.pack(fill='x', padx=(20, 0), pady=2)
+            
+            label = ctk.CTkLabel(
+                frame,
+                text=node.name,
+                font=self.theme.font_bold if node.domains else self.theme.font
+            )
+            label.pack(side='left')
+            
+            if node.domains:
+                for domain in node.domains:
+                    btn = ctk.CTkButton(
+                        frame,
+                        text=domain.value,
+                        command=lambda d=domain: self._select_agent(d, tree_window),
+                        font=self.theme.font_small,
+                        fg_color=self.theme.button_bg,
+                        hover_color=self.theme.button_hover,
+                        width=100
+                    )
+                    btn.pack(side='right', padx=5)
+            
+            if node.children:
+                for child in node.children:
+                    create_tree_node(parent, child)
+        
+        tree_frame = ctk.CTkFrame(tree_window, fg_color=self.theme.bg_secondary)
+        tree_frame.pack(fill='both', expand=True, padx=20, pady=20)
+        
+        create_tree_node(tree_frame, self.agent_tree.root)
+    
+    def _select_agent(self, domain: DomainType, window: ctk.CTkToplevel):
+        """Handle agent selection from tree"""
         if hasattr(self, 'on_agent_changed'):
-            self.on_agent_changed(DomainType(domain_value))
+            self.on_agent_changed(domain)
+        window.destroy()
 
 class LayerSystem:
     def __init__(self, root, theme: UITheme, window_width: int, window_height: int, data_manager: DataManager):
