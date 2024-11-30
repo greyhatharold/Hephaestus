@@ -21,13 +21,26 @@ class CodeAgent(BaseAgent):
             implementation_steps = self._generate_implementation_steps(idea, analysis)
             next_steps_tree = self._generate_next_steps_diagram(idea, implementation_steps)
             
-            return AgentResponse(
+            response = AgentResponse(
                 suggestions=analysis["suggestions"],
                 questions=analysis["questions"],
                 related_concepts=analysis["related_concepts"],
                 implementation_steps=implementation_steps,
                 next_steps_tree=next_steps_tree
             )
+            
+            # Store the idea and response
+            idea_id = self.data_manager.save_idea(idea, response)
+            
+            # Store diagram if generated
+            if next_steps_tree:
+                self.data_manager.save_diagram(
+                    idea_id=idea_id,
+                    image_data=next_steps_tree,
+                    gpt_response=str(response)
+                )
+            
+            return response
         except Exception as e:
             logger.error(f"Error processing design idea: {str(e)}")
             raise

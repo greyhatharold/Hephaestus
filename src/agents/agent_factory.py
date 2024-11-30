@@ -8,6 +8,7 @@ from src.agents.specialized_agents.code_agent import CodeAgent
 from src.core.domain_types import DomainType
 from src.utils.logger import get_logger
 from functools import lru_cache
+from src.data.data_manager import DataManager
 
 if TYPE_CHECKING:
     from src.agents.composition.agent_coordinator import AgentCoordinator

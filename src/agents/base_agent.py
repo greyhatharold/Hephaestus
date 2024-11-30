@@ -1,11 +1,15 @@
 from abc import ABC, abstractmethod
 from typing import Dict, List, Optional, Any
+from datetime import datetime
+import uuid
 
 from ..core.idea import Idea, AgentResponse
 from ..core.domain_types import DomainType
 from ..services.openai_service import OpenAIService
 from ..services.diagram_service import DiagramService
 from ..services.image_service import ImageService
+from ..data.data_manager import DataManager
+from ..data.chat_history import ChatMessage
 
 class BaseAgent(ABC):
     """
@@ -18,6 +22,7 @@ class BaseAgent(ABC):
         self.openai_service = OpenAIService()
         self.diagram_service = DiagramService()
         self.image_service = ImageService()
+        self.data_manager = DataManager()
         self.completion_params: Dict[str, Any] = {
             'temperature': 0.7,
             'max_tokens': 300,
@@ -110,6 +115,15 @@ class BaseAgent(ABC):
         
         try:
             response = self.openai_service.create_completion(prompt)
+            self.data_manager.add_chat_message(
+                ChatMessage(
+                    sender=f"{self.domain.value}_agent",
+                    content=message,
+                    timestamp=datetime.now(),
+                    domain=self.domain.value
+                ),
+                session_id=str(uuid.uuid4())
+            )
             return response
         except Exception as e:
             return f"Sorry, I encountered an error: {str(e)}"

@@ -23,10 +23,11 @@ class TechnologyAgent(BaseAgent):
             implementation_steps = self._generate_implementation_steps(idea, analysis)
             next_steps_tree = self._generate_next_steps_diagram(idea, implementation_steps)
             
+            # Generate concept image
             image_prompt = self._generate_image_prompt(idea, analysis)
             concept_image = self.image_service.generate_image(image_prompt)
             
-            return AgentResponse(
+            response = AgentResponse(
                 suggestions=analysis["suggestions"],
                 questions=analysis["questions"],
                 related_concepts=analysis["related_concepts"],
@@ -34,6 +35,27 @@ class TechnologyAgent(BaseAgent):
                 next_steps_tree=next_steps_tree,
                 concept_image=concept_image
             )
+            
+            # Store the idea and response
+            idea_id = self.data_manager.save_idea(idea, response)
+            
+            # Store diagram if generated
+            if next_steps_tree:
+                self.data_manager.save_diagram(
+                    idea_id=idea_id,
+                    image_data=next_steps_tree,
+                    gpt_response=str(response)
+                )
+            
+            # Store concept image if generated
+            if concept_image:
+                self.data_manager.save_diagram(
+                    idea_id=idea_id,
+                    image_data=concept_image,
+                    gpt_response="Technology concept visualization"
+                )
+            
+            return response
         except Exception as e:
             logger.error(f"Error processing technology idea: {str(e)}")
             raise

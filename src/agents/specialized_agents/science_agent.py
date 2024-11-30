@@ -23,7 +23,7 @@ class ScienceAgent(BaseAgent):
             # Generate scientific visualization
             concept_image = self._generate_concept_image(idea, analysis)
             
-            return AgentResponse(
+            response = AgentResponse(
                 suggestions=analysis["suggestions"],
                 questions=analysis["questions"],
                 related_concepts=analysis["related_concepts"],
@@ -31,6 +31,26 @@ class ScienceAgent(BaseAgent):
                 next_steps_tree=next_steps_tree,
                 concept_image=concept_image  # Add concept image
             )
+            
+            # Store the idea and response
+            idea_id = self.data_manager.save_idea(idea, response)
+            
+            # Store both diagram and concept image if generated
+            if next_steps_tree:
+                self.data_manager.save_diagram(
+                    idea_id=idea_id,
+                    image_data=next_steps_tree,
+                    gpt_response=str(response)
+                )
+                
+            if concept_image:
+                self.data_manager.save_diagram(
+                    idea_id=idea_id,
+                    image_data=concept_image,
+                    gpt_response="Scientific concept visualization"
+                )
+                
+            return response
         except Exception as e:
             logger.error(f"Error processing scientific idea: {str(e)}")
             raise

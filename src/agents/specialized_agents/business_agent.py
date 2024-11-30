@@ -21,11 +21,9 @@ class BusinessAgent(BaseAgent):
             analysis = self._analyze_idea(idea)
             implementation_steps = self._generate_implementation_steps(idea, analysis)
             next_steps_tree = self._generate_next_steps_diagram(idea, implementation_steps)
-            
-            # Generate concept visualization
             concept_image = self._generate_concept_image(idea, analysis)
             
-            return AgentResponse(
+            response = AgentResponse(
                 suggestions=analysis["suggestions"],
                 questions=analysis["questions"],
                 related_concepts=analysis["related_concepts"],
@@ -33,6 +31,19 @@ class BusinessAgent(BaseAgent):
                 next_steps_tree=next_steps_tree,
                 concept_image=concept_image
             )
+            
+            # Store the idea and response
+            idea_id = self.data_manager.save_idea(idea, response)
+            
+            # Store diagram if generated
+            if next_steps_tree:
+                self.data_manager.save_diagram(
+                    idea_id=idea_id,
+                    image_data=next_steps_tree,
+                    gpt_response=str(response)
+                )
+            
+            return response
         except Exception as e:
             logger.error(f"Error processing business idea: {str(e)}")
             raise
