@@ -167,7 +167,7 @@ class TechnologyAgent(BaseAgent):
 
     def _generate_image_prompt(self, idea: Idea, analysis: Dict[str, List[str]]) -> str:
         """Generate a detailed prompt for image generation."""
-        prompt = f"""Create a detailed image prompt for: {idea.concept}
+        prompt = f"""Create a detailed image prompt, designed to be used with a Stable Diffusion model, for: {idea.concept}
         
         Context:
         {chr(10).join([f"- {s}" for s in analysis.get("suggestions", [])[:2]])}

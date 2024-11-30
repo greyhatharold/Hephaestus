@@ -9,9 +9,10 @@ import base64
 import io
 from src.core.domain_types import DomainType
 from src.gui.layers import LayerSystem
-from .theme import UITheme, DomainThemes
+from .theme import UITheme
 from .animations import FloatingAnimation
 from src.agents.agent_factory import AgentFactory
+from .agent_tree import AgentTree, AgentTreeView
 
 class ProgressIndicator:
     def __init__(self, parent, theme: UITheme):
@@ -51,9 +52,9 @@ class Layer3DGUI:
         self.root = tk.Tk()
         self.root.title("Hephaestus")
         
-        # Initialize theme and data manager
-        self.current_theme = DomainThemes.get_theme(DomainType.TECHNOLOGY)
-        self.data_manager = system.data_manager  # Get data_manager from IdeaProcessor
+        # Initialize single theme
+        self.current_theme = UITheme()
+        self.data_manager = system.data_manager
         
         # Get screen dimensions
         self.screen_width = self.root.winfo_screenwidth()
@@ -108,6 +109,8 @@ class Layer3DGUI:
         
         self.progress = ProgressIndicator(self.root, self.current_theme)
         self.floating_animation = None  # Will be initialized in setup_prompt_layer
+        self.selected_supporting_domains = []  # Track selected supporting domains
+        self.agent_tree = AgentTree()
 
     def setup_layers(self):
         # Initialize prompt layer
@@ -194,6 +197,33 @@ class Layer3DGUI:
         
         # Bind window resize event to recenter entry frame
         self.root.bind('<Configure>', self._on_window_resize)
+        
+        # Add domain selection frame
+        self.domain_frame = ctk.CTkFrame(
+            self.entry_frame,
+            fg_color=self.current_theme.bg_tertiary
+        )
+        self.domain_frame.pack(pady=(0, 20))
+
+        # Add supporting domains selector
+        self.domain_vars = {}
+        for domain in DomainType:
+            var = tk.BooleanVar()
+            self.domain_vars[domain] = var
+            ctk.CTkCheckBox(
+                self.domain_frame,
+                text=domain.value.title(),
+                variable=var,
+                command=self._update_supporting_domains,
+                font=self.current_theme.font_small
+            ).pack(side='left', padx=5)
+
+    def _update_supporting_domains(self):
+        """Update the list of selected supporting domains"""
+        self.selected_supporting_domains = [
+            domain for domain, var in self.domain_vars.items() 
+            if var.get()
+        ]
 
     def setup_questions_layer(self, questions):
         # Get the prompt layer frame
@@ -263,62 +293,58 @@ class Layer3DGUI:
         for widget in layer_frame.winfo_children():
             widget.destroy()
         
-        results_frame = ctk.CTkFrame(layer_frame, fg_color='transparent')
+        # Create main content frame
+        content_frame = ctk.CTkFrame(layer_frame, fg_color='transparent')
+        content_frame.pack(expand=True, fill='both', padx=20, pady=20)
         
-        # Display formatted results
+        # Title
         ctk.CTkLabel(
-            results_frame,
+            content_frame,
             text=f"Ideas for: {results['idea']['concept']}",
             font=self.current_theme.font,
             text_color=self.current_theme.text_color
-        ).pack(pady=20)
+        ).pack(pady=(0, 20))
         
-        # Create scrollable text area
+        # Create horizontal layout frame
+        horizontal_frame = ctk.CTkFrame(content_frame, fg_color='transparent')
+        horizontal_frame.pack(expand=True, fill='both')
+        
+        # Left side - Text content
+        text_frame = ctk.CTkFrame(horizontal_frame, fg_color='transparent')
+        text_frame.pack(side='left', fill='both', expand=True, padx=(0, 10))
+        
+        # Text area
         text_area = ctk.CTkTextbox(
-            results_frame,
-            width=800,
+            text_frame,
+            width=600,  # Adjusted width
             height=500,
             font=self.current_theme.font
         )
-        text_area.pack(pady=20)
+        text_area.pack(expand=True, fill='both')
         
         # Format and insert results
         formatted_text = self.format_results(results)
         text_area.insert('1.0', formatted_text)
         text_area.configure(state='disabled')
         
-        # Add concept image if available
+        # Right side - Image (if available)
         if results['development'].get('concept_image'):
             try:
                 img_data = base64.b64decode(results['development']['concept_image'])
                 img = Image.open(io.BytesIO(img_data))
                 
-                # Create a frame for side-by-side layout
-                content_frame = ctk.CTkFrame(
-                    results_frame,
-                    fg_color='transparent'
-                )
-                content_frame.pack(fill='both', expand=True, padx=20)
-                
-                # Left side for text
-                text_frame = ctk.CTkFrame(
-                    content_frame,
-                    fg_color='transparent'
-                )
-                text_frame.pack(side='left', fill='both', expand=True, padx=(0, 10))
-                
-                # Right side for image
+                # Create image frame
                 image_frame = ctk.CTkFrame(
-                    content_frame,
+                    horizontal_frame,
                     fg_color=self.current_theme.bg_secondary,
                     border_width=1,
                     border_color=self.current_theme.border_color
                 )
-                image_frame.pack(side='right', padx=(10, 0))
+                image_frame.pack(side='right', fill='y', padx=(10, 0))
                 
-                # Calculate appropriate image size based on window dimensions
-                max_width = min(self.window_width // 3, 400)  # Max 1/3 of window width or 400px
-                max_height = min(self.window_height // 2, 400)  # Max 1/2 of window height or 400px
+                # Calculate appropriate image size
+                max_width = min(self.window_width // 3, 400)
+                max_height = min(self.window_height // 2, 400)
                 
                 # Resize image while maintaining aspect ratio
                 img_width, img_height = img.size
@@ -326,12 +352,13 @@ class Layer3DGUI:
                 new_size = (int(img_width * scale), int(img_height * scale))
                 img = img.resize(new_size, Image.Resampling.LANCZOS)
                 
+                # Display image
                 photo = ImageTk.PhotoImage(img)
                 img_label = ttk.Label(image_frame, image=photo)
                 img_label.image = photo
                 img_label.pack(pady=10, padx=10)
                 
-                # Add image caption
+                # Add caption
                 ctk.CTkLabel(
                     image_frame,
                     text="Concept Visualization",
@@ -344,18 +371,19 @@ class Layer3DGUI:
         
         # Modify the button to go to next steps instead of restart
         ctk.CTkButton(
-            results_frame,
+            content_frame,
             text="View Implementation Plan",
             command=lambda: self.show_next_steps(results)
         ).pack(pady=20)
         
-        results_frame.place(relx=0.5, rely=0.5, anchor='center')
+        content_frame.place(relx=0.5, rely=0.5, anchor='center')
 
     def format_results(self, results):
         development = results['development']
         
         formatted = f"""Domain: {results['idea']['domain'].title()}
 Keywords: {', '.join(results['idea']['keywords'])}
+{f"Supporting Domains: {', '.join(d.title() for d in results['idea']['supporting_domains'])}" if results['idea'].get('supporting_domains') else ""}
 
 Suggestions:
 {self._format_list(development['suggestions'])}
@@ -384,17 +412,20 @@ Implementation Steps:
         if not initial_concept:
             return
         
-        # Show progress immediately
         self.progress.show()
         self.progress.update_text("Analyzing concept...")
         
         def process_in_thread():
             try:
-                result = self.system.develop_idea(initial_concept)
+                # Pass selected supporting domains to develop_idea
+                result = self.system.develop_idea(
+                    initial_concept, 
+                    supporting_domains=self.selected_supporting_domains
+                )
                 self.initial_result = result
                 self.root.after(0, lambda: self._update_after_processing(result))
             except Exception as error:
-                error_msg = str(error)  # Capture error message in closure scope
+                error_msg = str(error)
                 self.root.after(0, lambda: self._handle_processing_error(error_msg))
             finally:
                 self.root.after(0, self.progress.hide)
@@ -539,34 +570,8 @@ Implementation Steps:
         webbrowser.open(f"{base_url}{encoded_code}")
 
     def update_theme(self, domain: DomainType):
-        """Update the theme across all UI elements"""
-        self.current_theme = DomainThemes.get_theme(domain)
-        self.root.configure(bg=self.current_theme.bg_color)
-        self.layer_system.update_theme(self.current_theme)
-        
-        # Update entry frame if it exists
-        if hasattr(self, 'entry_frame'):
-            self.entry_frame.configure(
-                fg_color=self.current_theme.bg_secondary,
-                border_color=self.current_theme.border_color
-            )
-            self.prompt_label.configure(
-                font=self.current_theme.font_title,
-                text_color=self.current_theme.text_secondary
-            )
-            self.input_entry.configure(
-                font=self.current_theme.font,
-                text_color=self.current_theme.text_color,
-                border_color=self.current_theme.border_color,
-                fg_color=self.current_theme.input_bg,
-                placeholder_text_color=self.current_theme.text_disabled
-            )
-            self.chat_button.configure(
-                font=self.current_theme.font_bold,
-                fg_color=self.current_theme.button_bg,
-                hover_color=self.current_theme.button_hover,
-                text_color=self.current_theme.text_color
-            )
+        """Theme updates are no longer needed as we use a single theme"""
+        pass
 
     def _on_window_resize(self, event):
         """Handle window resize events to maintain centering"""
@@ -580,41 +585,24 @@ Implementation Steps:
                 self.entry_frame.place(relx=0.5, rely=0.5, anchor='center')
 
     def show_chat_layer(self):
-        # Get chat layer
-        chat_layer = self.layer_system.layers[4]
+        """Show chat interface with selected agent"""
+        chat_layer = self.layer_system.layers[4]  # Get chat layer
         
-        # Set up callbacks
-        chat_layer.on_back_pressed = lambda: self.transition_to_layer(0)
-        chat_layer.on_agent_changed = self._change_chat_agent
+        # Set callbacks
+        chat_layer.on_agent_changed = self._on_agent_changed
+        chat_layer.on_back_pressed = lambda: self.transition_to_layer(2)
         
-        # Set initial agent if none exists
-        if not hasattr(self, 'current_agent'):
-            domain = self.initial_result['idea']['domain'] if hasattr(self, 'initial_result') else DomainType.TECHNOLOGY
-            self.current_agent = AgentFactory.create_agent(DomainType(domain))
-            chat_layer.agent_var.set(domain.value)
+        # Bind chat return handler
+        chat_layer.chat_input.bind('<Return>', self._handle_chat_return)
         
-        # Load existing chat history
-        chat_history = chat_layer.chat_manager.get_session_history()
-        
-        # Clear previous messages
-        chat_layer.chat_history.configure(state='normal')
-        chat_layer.chat_history.delete('1.0', 'end')
-        chat_layer.chat_history.configure(state='disabled')
-        
-        # Display existing messages
-        for message in chat_history:
-            chat_layer.add_message(message.sender, message.content)
-        
-        # Update the Return key binding for the new textbox
-        chat_layer.chat_input.bind('<Return>', lambda e: self._handle_chat_return(e))
-        
+        # Show the layer
         self.transition_to_layer(4)
 
-    def _change_chat_agent(self, domain: DomainType):
+    def _on_agent_changed(self, domain: DomainType):
         """Handle changing the current chat agent"""
         self.current_agent = AgentFactory.create_agent(domain)
         # Update theme to match new agent's domain
-        self.update_theme(domain)
+        self.update_theme(UITheme.get_theme())
 
     def _handle_chat_return(self, event):
         if not event.state & 0x1:  # Shift key is not pressed

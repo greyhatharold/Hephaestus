@@ -167,7 +167,7 @@ class CodeAgent(BaseAgent):
         Returns:
             str: The formatted prompt for image generation
         """
-        return f"""Create a modern, minimalist technical diagram or mockup for: {idea.concept}
+        return f"""Create a modern, minimalist technical diagram or mockup, designed to be used with a Stable Diffusion model, for: {idea.concept}
         
         Key aspects to visualize:
         {chr(10).join([f"- {keyword}" for keyword in idea.keywords])}

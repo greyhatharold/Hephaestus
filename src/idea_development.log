@@ -70,3 +70,30 @@
 2024-11-29 23:36:59,675 - src.core.idea_processor - INFO - Starting idea development process
 2024-11-29 23:38:05,365 - src.core.idea_processor - INFO - Initializing Idea Processor
 2024-11-29 23:38:17,525 - src.core.idea_processor - INFO - Starting idea development process
+2024-11-30 00:05:34,218 - src.core.idea_processor - INFO - Starting idea development process
+2024-11-30 00:14:16,438 - src.core.idea_processor - INFO - Initializing Idea Processor
+2024-11-30 00:17:48,384 - src.core.idea_processor - INFO - Initializing Idea Processor
+2024-11-30 00:19:32,587 - src.core.idea_processor - INFO - Initializing Idea Processor
+2024-11-30 00:19:52,845 - src.core.idea_processor - INFO - Initializing Idea Processor
+2024-11-30 00:19:59,372 - src.core.idea_processor - INFO - Initializing Idea Processor
+2024-11-30 00:23:49,239 - src.core.idea_processor - INFO - Initializing Idea Processor
+2024-11-30 00:25:22,318 - src.core.idea_processor - INFO - Initializing Idea Processor
+2024-11-30 00:27:02,449 - src.core.idea_processor - INFO - Initializing Idea Processor
+2024-11-30 00:30:15,303 - src.core.idea_processor - INFO - Initializing Idea Processor
+2024-11-30 00:34:22,497 - src.core.idea_processor - INFO - Initializing Idea Processor
+2024-11-30 00:35:39,009 - src.core.idea_processor - INFO - Initializing Idea Processor
+2024-11-30 00:35:55,045 - src.core.idea_processor - INFO - Initializing Idea Processor
+2024-11-30 00:37:07,745 - src.core.idea_processor - INFO - Initializing Idea Processor
+2024-11-30 00:39:01,841 - src.core.idea_processor - INFO - Initializing Idea Processor
+2024-11-30 00:41:14,129 - src.core.idea_processor - INFO - Initializing Idea Processor
+2024-11-30 00:44:49,061 - src.core.idea_processor - INFO - Initializing Idea Processor
+2024-11-30 00:46:09,923 - src.core.idea_processor - INFO - Initializing Idea Processor
+2024-11-30 00:46:58,104 - src.core.idea_processor - INFO - Initializing Idea Processor
+2024-11-30 00:47:54,302 - src.core.idea_processor - INFO - Initializing Idea Processor
+2024-11-30 00:50:20,007 - src.core.idea_processor - INFO - Initializing Idea Processor
+2024-11-30 00:50:41,456 - src.core.idea_processor - INFO - Initializing Idea Processor
+2024-11-30 00:50:54,224 - src.core.idea_processor - INFO - Initializing Idea Processor
+2024-11-30 00:50:59,479 - src.core.idea_processor - INFO - Starting idea development process
+2024-11-30 00:51:45,459 - src.services.image_service - ERROR - Error loading model: `enable_sequential_cpu_offload` requires `accelerate v0.14.0` or higher
+2024-11-30 00:51:45,459 - src.services.image_service - ERROR - Error generating image: Failed to load Stable Diffusion model: `enable_sequential_cpu_offload` requires `accelerate v0.14.0` or higher
+2024-11-30 00:52:28,112 - src.core.idea_processor - INFO - Starting idea development process
