@@ -588,15 +588,37 @@ Implementation Steps:
         """Show chat interface with selected agent"""
         chat_layer = self.layer_system.layers[4]  # Get chat layer
         
+        # Store current results for restoration when returning
+        if hasattr(self, 'initial_result'):
+            self.stored_results = self.initial_result
+        else:
+            # If no results yet, just store None or empty dict
+            self.stored_results = None
+        
         # Set callbacks
         chat_layer.on_agent_changed = self._on_agent_changed
-        chat_layer.on_back_pressed = lambda: self.transition_to_layer(2)
+        chat_layer.on_back_pressed = self._handle_chat_back
         
         # Bind chat return handler
         chat_layer.chat_input.bind('<Return>', self._handle_chat_return)
         
+        # Store the previous layer before transitioning
+        self.previous_layer = self.current_layer
+        
         # Show the layer
         self.transition_to_layer(4)
+
+    def _handle_chat_back(self):
+        """Handle returning from chat layer to results layer"""
+        # First restore the results layer if we have stored results
+        if hasattr(self, 'stored_results') and self.stored_results is not None:
+            self.setup_results_layer(self.stored_results)
+            target_layer = 2  # Results layer
+        else:
+            target_layer = 0  # Prompt layer
+        
+        # Then transition back
+        self.transition_to_layer(target_layer)
 
     def _on_agent_changed(self, domain: DomainType):
         """Handle changing the current chat agent"""

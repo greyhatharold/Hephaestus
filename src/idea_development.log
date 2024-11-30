@@ -107,3 +107,21 @@
 2024-11-30 01:12:26,058 - src.core.idea_processor - INFO - Starting idea development process
 2024-11-30 01:12:27,119 - src.agents.domain_agent - INFO - Processing idea in arts domain
 2024-11-30 01:17:33,395 - src.core.idea_processor - INFO - Initializing Idea Processor
+2024-11-30 12:52:17,178 - src.core.idea_processor - INFO - Initializing Idea Processor
+2024-11-30 12:54:27,831 - src.core.idea_processor - INFO - Initializing Idea Processor
+2024-11-30 12:55:18,074 - src.core.idea_processor - INFO - Initializing Idea Processor
+2024-11-30 12:55:37,558 - src.core.idea_processor - INFO - Starting idea development process
+2024-11-30 12:56:42,368 - src.services.image_service - ERROR - Error loading model: `enable_sequential_cpu_offload` requires `accelerate v0.14.0` or higher
+2024-11-30 12:56:42,368 - src.services.image_service - ERROR - Error generating image: Failed to load Stable Diffusion model: `enable_sequential_cpu_offload` requires `accelerate v0.14.0` or higher
+2024-11-30 12:56:45,738 - src.core.idea_processor - INFO - Starting idea development process
+2024-11-30 13:03:30,227 - src.core.idea_processor - INFO - Initializing Idea Processor
+2024-11-30 13:37:45,889 - src.core.idea_processor - INFO - Initializing Idea Processor
+2024-11-30 13:38:39,266 - src.core.idea_processor - INFO - Initializing Idea Processor
+2024-11-30 13:39:17,779 - src.core.idea_processor - INFO - Initializing Idea Processor
+2024-11-30 13:40:30,908 - src.core.idea_processor - INFO - Initializing Idea Processor
+2024-11-30 15:49:00,908 - src.core.idea_processor - INFO - Initializing Idea Processor
+2024-11-30 15:49:24,104 - src.core.idea_processor - INFO - Starting idea development process
+2024-11-30 15:49:25,926 - src.agents.domain_agent - INFO - Processing idea in arts domain
+2024-11-30 15:50:08,343 - src.core.idea_processor - INFO - Starting idea development process
+2024-11-30 15:50:09,784 - src.agents.domain_agent - INFO - Processing idea in arts domain
+2024-11-30 15:57:37,506 - src.core.idea_processor - INFO - Starting idea development process

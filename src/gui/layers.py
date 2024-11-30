@@ -52,6 +52,7 @@ class Layer:
         self.frame.update()
 
     def hide(self):
+        """Hide the layer but don't destroy content"""
         self.container.place_forget()
 
     def clear(self):
@@ -140,15 +141,15 @@ class ChatLayer(Layer):
         self.chat_input.bind('<KeyRelease>', self._adjust_input_height)
         
         # Back button
-        back_button = ctk.CTkButton(
+        self.back_button = ctk.CTkButton(
             chat_container,
             text="Back",
-            command=lambda: self.on_back_pressed() if hasattr(self, 'on_back_pressed') else None,
+            command=self._handle_back_press,
             fg_color=self.theme.accent_color,
             width=120,
             height=35
         )
-        back_button.pack(pady=10)
+        self.back_button.pack(pady=10)
 
     def _adjust_input_height(self, event=None):
         # Get number of lines
@@ -212,6 +213,11 @@ class ChatLayer(Layer):
             self.on_agent_changed(domain)
         window.destroy()
 
+    def _handle_back_press(self):
+        """Handle back button press with proper callback"""
+        if hasattr(self, 'on_back_pressed'):
+            self.on_back_pressed()
+
 class LayerSystem:
     def __init__(self, root, theme: UITheme, window_width: int, window_height: int, data_manager: DataManager):
         self.root = root
@@ -234,11 +240,13 @@ class LayerSystem:
             layer.hide()
 
     def transition_to_layer(self, layer_index: int):
-        # Hide current layer
-        self.layers[self.current_layer].hide()
-        # Show new layer
-        self.layers[layer_index].show()
-        self.current_layer = layer_index
+        """Transition between layers while preserving content"""
+        if 0 <= layer_index < len(self.layers):
+            # Hide current layer
+            self.layers[self.current_layer].hide()
+            # Show new layer
+            self.layers[layer_index].show()
+            self.current_layer = layer_index
 
     def update_theme(self, theme: UITheme):
         self.current_theme = theme
