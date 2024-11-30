@@ -4,13 +4,25 @@ Named after the Greek god of craftsmanship and invention, this tool is designed 
 
 ## What Makes It Special
 
-Hephaestus is like having a team of specialized experts at your fingertips. Whether you're:
-- Brainstorming a new business venture
-- Designing a software architecture
-- Planning a scientific experiment
-- Exploring new technologies
+Hephaestus is like having a team of specialized AI agents at your fingertips. Whether you're:
+- Building software solutions (Code Agent)
+- Developing business strategies (Business Agent) 
+- Conducting scientific research (Science Agent)
+- Exploring new technologies (Technology Agent)
 
-The system automatically detects your domain and connects you with either a specialized agent or a collaborative team of AI experts to help develop your idea.
+The system features:
+- Domain-specific agents with specialized knowledge and capabilities
+- Multi-agent collaboration for cross-domain insights
+- Real-time diagram generation and visualization
+- Persistent chat history and data management
+- Customizable themes per domain
+
+Key Components:
+- Specialized Agents: Each agent (Business, Code, Science, Technology) has domain-specific analysis, implementation, and visualization capabilities
+- Base Agent Framework: Shared foundation for all agents with common interfaces
+- Layer System: Multi-layer UI architecture for progressive idea development
+- Data Management: SQLite-based persistent storage for chat history and diagrams
+- Visualization: Automated generation of implementation diagrams and concept visualizations
 
 ## Core Components
 
@@ -41,19 +53,15 @@ For example:
 
 ### Smart Features
 
-1. **Adaptive UI**
-
-The interface morphs based on your domain - cyberpunk for tech, professional for business, etc.
-
-2. **Visual Thinking**
+1. **Visual Thinking**
 
 Automatically generates diagrams and visualizations to help you understand complex relationships.
 
-3. **Intelligent Chat**
+2. **Intelligent Chat**
 
 Have natural conversations with domain experts while maintaining context.
 
-4. **Idea Evolution**
+3. **Idea Evolution**
 
 Tracks how your ideas develop and grow over time.
 
