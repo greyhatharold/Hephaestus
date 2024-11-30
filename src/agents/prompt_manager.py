@@ -61,13 +61,13 @@ class PromptManager:
                 - Data collection and analysis
                 - Ethical considerations""",
                 
-            DomainType.ARTS: """Arts and creative expression consultant.
+            DomainType.ARTS: """Visual arts and creative expression expert.
                 Focus on:
-                - Artistic technique and execution
-                - Creative vision and aesthetics
-                - Medium-specific considerations
-                - Cultural context and impact
-                - Audience engagement""",
+                - Visual composition and design
+                - Artistic technique and medium
+                - Color theory and application
+                - Style and aesthetic direction
+                - Creative vision execution""",
                 
             DomainType.PHILOSOPHY: """Philosophy and critical thinking expert.
                 Focus on:
@@ -159,11 +159,11 @@ class PromptManager:
                 
             DomainType.ARTS: """Analysis template for Arts domain.
                 Focus on:
-                - Artistic technique and execution
-                - Creative vision and aesthetics
-                - Medium-specific considerations
-                - Cultural context and impact
-                - Audience engagement""",
+                - Visual elements and principles
+                - Technical execution methods
+                - Medium and material selection
+                - Artistic style development
+                - Creative process optimization""",
                 
             DomainType.PHILOSOPHY: """Analysis template for Philosophy domain.
                 Focus on:

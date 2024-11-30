@@ -7,6 +7,8 @@ from src.agents.specialized_agents.science_agent import ScienceAgent
 from src.agents.specialized_agents.code_agent import CodeAgent
 from src.agents.specialized_agents.literature_agent import LiteratureAgent
 from src.agents.specialized_agents.philosophy_agent import PhilosophyAgent
+from src.agents.specialized_agents.writing_agent import WritingAgent
+from src.agents.specialized_agents.arts_agent import ArtsAgent
 from src.core.domain_types import DomainType
 from src.utils.logger import get_logger
 from functools import lru_cache
@@ -30,6 +32,8 @@ class AgentFactory:
         DomainType.CODE: CodeAgent,
         DomainType.LITERATURE: LiteratureAgent,
         DomainType.PHILOSOPHY: PhilosophyAgent,
+        DomainType.WRITING: WritingAgent,
+        DomainType.ARTS: ArtsAgent,
     }
     
     @classmethod
