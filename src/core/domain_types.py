@@ -8,4 +8,5 @@ class DomainType(Enum):
     LITERATURE = "literature"
     SOCIAL_SCIENCE = "social_science"
     ARTS = "arts"
-    PHILOSOPHY = "philosophy" 
+    PHILOSOPHY = "philosophy"
+    WRITING = "writing" 

@@ -588,11 +588,17 @@ Implementation Steps:
         """Show chat interface with selected agent"""
         chat_layer = self.layer_system.layers[4]  # Get chat layer
         
+        # Initialize default agent if none exists
+        if not hasattr(self, 'current_agent'):
+            # Use TECHNOLOGY as default domain, or get from current results if available
+            default_domain = (DomainType.TECHNOLOGY if not hasattr(self, 'initial_result') 
+                             else DomainType(self.initial_result['idea']['domain']))
+            self.current_agent = AgentFactory.create_agent(default_domain)
+        
         # Store current results for restoration when returning
         if hasattr(self, 'initial_result'):
             self.stored_results = self.initial_result
         else:
-            # If no results yet, just store None or empty dict
             self.stored_results = None
         
         # Set callbacks
@@ -635,7 +641,7 @@ Implementation Steps:
         chat_layer = self.layer_system.layers[4]
         message = chat_layer.get_message()
         
-        if not message:
+        if not message or not hasattr(self, 'current_agent'):
             return
         
         chat_layer.clear_input()
@@ -652,7 +658,7 @@ Implementation Steps:
                 response = self.current_agent.chat_response(message)
                 self.root.after(0, lambda: self._update_chat(chat_layer, response, domain))
             except Exception as error:
-                error_msg = str(error)  # Capture error message in closure scope
+                error_msg = str(error)
                 self.root.after(0, lambda: self._handle_processing_error(error_msg))
             finally:
                 self.root.after(0, self.progress.hide)
