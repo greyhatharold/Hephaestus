@@ -2,7 +2,7 @@
 
 Named after the Greek god of craftsmanship and invention, this tool is designed to be your creative companion.
 
-## What Makes It Special?
+## What Makes It Special
 
 Hephaestus is like having a team of specialized experts at your fingertips. Whether you're:
 - Brainstorming a new business venture
