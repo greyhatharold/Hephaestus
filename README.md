@@ -10,7 +10,7 @@ Hephaestus is like having a team of specialized experts at your fingertips. Whet
 - Planning a scientific experiment
 - Exploring new technologies
 
-The system automatically detects your domain and connects you with the right AI agent to help develop your idea.
+The system automatically detects your domain and connects you with either a specialized agent or a collaborative team of AI experts to help develop your idea.
 
 ## Core Components
 
@@ -26,6 +26,18 @@ Each agent has deep domain knowledge and can:
 - Create visual diagrams
 - Engage in meaningful dialogue
 - Provide domain-specific insights
+
+### Collaborative Intelligence
+
+Agents can work together through:
+- **Dynamic Composition**: Combine multiple domain experts for complex problems
+- **Consensus Mechanism**: Get balanced insights through expert voting
+- **Cross-Domain Analysis**: Leverage expertise from multiple fields simultaneously
+
+For example:
+- Combine Business + Technology agents for startup tech evaluation
+- Mix Science + Code agents for research software development
+- Blend Technology + Business + Code for full-stack product development
 
 ### Smart Features
 
@@ -54,19 +66,26 @@ Tracks how your ideas develop and grow over time.
 ## How It Works
 
 1. **Input**: Share your initial concept
-2. **Analysis**: The system classifies your domain and routes to the right expert
-3. **Development**: 
-   - Generates suggestions
-   - Asks probing questions
+2. **Domain Selection**: 
+   - Choose your primary domain
+   - Select supporting domains for collaborative analysis
+3. **Analysis**: 
+   - Single domain: Routes to specialized expert
+   - Multiple domains: Activates collaborative processing
+4. **Development**: 
+   - Generates consensus-based suggestions
+   - Asks probing questions from multiple perspectives
    - Maps implementation steps
    - Creates visual aids
-4. **Iteration**: Engage in dialogue to refine and improve
+5. **Iteration**: Engage in dialogue to refine and improve
 
 ## Technical Highlights
 
 - Leverages GPT-4 for intelligent processing
 - Stable Diffusion for image generation
 - SQLite for persistent storage
+- Advanced agent collaboration system
+- Dynamic consensus mechanisms
 
 ## Getting Started
 
@@ -85,12 +104,27 @@ python main.py
 
 The real power comes from how it combines:
 - Domain expertise
+- Collaborative intelligence
 - Visual thinking
 - Natural dialogue
 - Persistent learning
 - Adaptive interfaces
 
-Think of it as your personal innovation lab, ready to help develop any idea you can imagine!
+Think of it as your personal innovation lab, powered by a team of AI experts working together to help develop any idea you can imagine!
+
+## Using Collaborative Agents
+
+To leverage multiple domains:
+1. Enter your concept
+2. Select your primary domain
+3. Check additional supporting domains
+4. Get comprehensive analysis from multiple experts
+
+The system will automatically coordinate between agents to provide:
+- Consensus-based recommendations
+- Cross-domain insights
+- Integrated implementation plans
+- Multi-perspective analysis
 
 ---
 

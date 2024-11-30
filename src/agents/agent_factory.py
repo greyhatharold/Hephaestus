@@ -1,4 +1,4 @@
-from typing import Dict, Type
+from typing import Dict, Type, List
 from src.agents.base_agent import BaseAgent
 from src.agents.domain_agent import DomainAgent
 from src.agents.specialized_agents.technology_agent import TechnologyAgent
@@ -8,6 +8,7 @@ from src.agents.specialized_agents.code_agent import CodeAgent
 from src.core.domain_types import DomainType
 from src.utils.logger import get_logger
 from functools import lru_cache
+from src.agents.composition.agent_coordinator import AgentCoordinator
 
 logger = get_logger(__name__)
 
@@ -62,3 +63,10 @@ class AgentFactory:
     def get_available_domains(cls) -> list[DomainType]:
         """Get list of all available domain types"""
         return list(cls._agent_registry.keys()) 
+    
+    @classmethod
+    def create_collaborative_agent(cls, 
+                                 primary_domain: DomainType,
+                                 supporting_domains: List[DomainType]) -> AgentCoordinator:
+        """Create a collaborative agent that coordinates multiple domain experts"""
+        return AgentCoordinator(primary_domain, supporting_domains)

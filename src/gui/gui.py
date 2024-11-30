@@ -108,6 +108,7 @@ class Layer3DGUI:
         
         self.progress = ProgressIndicator(self.root, self.current_theme)
         self.floating_animation = None  # Will be initialized in setup_prompt_layer
+        self.selected_supporting_domains = []  # Track selected supporting domains
 
     def setup_layers(self):
         # Initialize prompt layer
@@ -194,6 +195,33 @@ class Layer3DGUI:
         
         # Bind window resize event to recenter entry frame
         self.root.bind('<Configure>', self._on_window_resize)
+        
+        # Add domain selection frame
+        self.domain_frame = ctk.CTkFrame(
+            self.entry_frame,
+            fg_color=self.current_theme.bg_tertiary
+        )
+        self.domain_frame.pack(pady=(0, 20))
+
+        # Add supporting domains selector
+        self.domain_vars = {}
+        for domain in DomainType:
+            var = tk.BooleanVar()
+            self.domain_vars[domain] = var
+            ctk.CTkCheckBox(
+                self.domain_frame,
+                text=domain.value.title(),
+                variable=var,
+                command=self._update_supporting_domains,
+                font=self.current_theme.font_small
+            ).pack(side='left', padx=5)
+
+    def _update_supporting_domains(self):
+        """Update the list of selected supporting domains"""
+        self.selected_supporting_domains = [
+            domain for domain, var in self.domain_vars.items() 
+            if var.get()
+        ]
 
     def setup_questions_layer(self, questions):
         # Get the prompt layer frame
@@ -356,6 +384,7 @@ class Layer3DGUI:
         
         formatted = f"""Domain: {results['idea']['domain'].title()}
 Keywords: {', '.join(results['idea']['keywords'])}
+{f"Supporting Domains: {', '.join(d.title() for d in results['idea']['supporting_domains'])}" if results['idea'].get('supporting_domains') else ""}
 
 Suggestions:
 {self._format_list(development['suggestions'])}
@@ -384,17 +413,20 @@ Implementation Steps:
         if not initial_concept:
             return
         
-        # Show progress immediately
         self.progress.show()
         self.progress.update_text("Analyzing concept...")
         
         def process_in_thread():
             try:
-                result = self.system.develop_idea(initial_concept)
+                # Pass selected supporting domains to develop_idea
+                result = self.system.develop_idea(
+                    initial_concept, 
+                    supporting_domains=self.selected_supporting_domains
+                )
                 self.initial_result = result
                 self.root.after(0, lambda: self._update_after_processing(result))
             except Exception as error:
-                error_msg = str(error)  # Capture error message in closure scope
+                error_msg = str(error)
                 self.root.after(0, lambda: self._handle_processing_error(error_msg))
             finally:
                 self.root.after(0, self.progress.hide)

@@ -166,7 +166,7 @@ class ScienceAgent(BaseAgent):
 
     def _generate_image_prompt(self, idea: Idea, analysis: Dict[str, List[str]]) -> str:
         """Generate a science-focused image prompt."""
-        prompt = f"""Create a detailed scientific visualization prompt for: {idea.concept}
+        prompt = f"""Create a detailed scientific visualization prompt, designed to be used with a Stable Diffusion model, for: {idea.concept}
         
         Scientific Context:
         {chr(10).join([f"- {s}" for s in analysis.get("suggestions", [])[:2]])}

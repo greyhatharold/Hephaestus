@@ -39,7 +39,7 @@ class BusinessAgent(BaseAgent):
 
     def _generate_image_prompt(self, idea: Idea, analysis: Dict[str, List[str]]) -> str:
         """Generate a business-focused image prompt."""
-        prompt = f"""Create a detailed image prompt for a business concept: {idea.concept}
+        prompt = f"""Create a detailed image prompt, designed to be used with a Stable Diffusion model, for a business concept: {idea.concept}
         
         Business Context:
         {chr(10).join([f"- {s}" for s in analysis.get("suggestions", [])[:2]])}

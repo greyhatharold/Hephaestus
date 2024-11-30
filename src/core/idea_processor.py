@@ -9,6 +9,7 @@ from src.agents.base_agent import BaseAgent
 from src.services.openai_service import OpenAIService
 from src.utils.logger import get_logger
 from src.data.data_manager import DataManager
+from src.agents.composition.agent_coordinator import AgentCoordinator
 
 logger = get_logger(__name__)
 
@@ -24,6 +25,7 @@ class IdeaProcessor:
         self.data_manager = DataManager()
         self.openai_service = OpenAIService()
         self._agents = {}
+        self._collaborative_agents = {}  # Cache for collaborative agents
 
     @property
     def agents(self) -> Dict[DomainType, BaseAgent]:
@@ -34,12 +36,19 @@ class IdeaProcessor:
             }
         return self._agents
 
-    def develop_idea(self, raw_concept: str) -> Dict:
-        """Main entry point for idea development."""
+    def develop_idea(self, raw_concept: str, supporting_domains: List[DomainType] = None) -> Dict:
+        """Main entry point for idea development with optional collaborative processing."""
         logger.info("Starting idea development process")
         
         idea = self._create_structured_idea(raw_concept)
-        response = self.agents[idea.domain].process_idea(idea)
+        
+        if supporting_domains:
+            # Use collaborative agent if supporting domains are specified
+            agent = self._get_collaborative_agent(idea.domain, supporting_domains)
+            response = agent.process_complex_idea(idea)
+        else:
+            # Use single domain agent
+            response = self.agents[idea.domain].process_idea(idea)
         
         # Save to database
         idea_id = self.data_manager.save_idea(idea, response)
@@ -49,14 +58,16 @@ class IdeaProcessor:
             "idea": {
                 "concept": idea.concept,
                 "domain": idea.domain.value,
-                "keywords": idea.keywords
+                "keywords": idea.keywords,
+                "supporting_domains": [d.value for d in supporting_domains] if supporting_domains else []
             },
             "development": {
                 "suggestions": response.suggestions,
                 "related_concepts": response.related_concepts,
                 "questions": response.questions,
                 "implementation_steps": response.implementation_steps,
-                "next_steps_tree": response.next_steps_tree
+                "next_steps_tree": response.next_steps_tree,
+                "concept_image": getattr(response, 'concept_image', None)
             },
             "timestamp": datetime.now().isoformat()
         }
@@ -93,3 +104,13 @@ class IdeaProcessor:
         except Exception as e:
             logger.error(f"Error extracting keywords: {str(e)}")
             raise 
+
+    def _get_collaborative_agent(self, primary_domain: DomainType, 
+                               supporting_domains: List[DomainType]) -> AgentCoordinator:
+        """Get or create a collaborative agent for the given domains."""
+        cache_key = (primary_domain, tuple(sorted(supporting_domains)))
+        if cache_key not in self._collaborative_agents:
+            self._collaborative_agents[cache_key] = AgentFactory.create_collaborative_agent(
+                primary_domain, supporting_domains
+            )
+        return self._collaborative_agents[cache_key]
