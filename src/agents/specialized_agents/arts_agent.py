@@ -17,10 +17,11 @@ class ArtsAgent(BaseAgent):
         }
         # Override default image service with enhanced settings
         self.image_service = ImageService(
-            image_size=(1024, 1024),  # Higher resolution
+            default_image_size=(1024, 1024),  # Fixed parameter name
             num_inference_steps=50,    # More detailed generation
             guidance_scale=8.5         # Stronger prompt adherence
         )
+        self.skip_questions = True  # Add flag to skip questions
 
     def process_idea(self, idea: Idea) -> AgentResponse:
         """Process an artistic idea with focus on visual generation."""
@@ -33,29 +34,36 @@ class ArtsAgent(BaseAgent):
             analysis = self._analyze_idea(idea)
             implementation_steps = self._generate_implementation_steps(idea, analysis)
             
-            # Generate multiple concept images for artistic ideas
-            concept_images = self._generate_multiple_concept_images(idea, analysis)
+            # Generate image and store it directly in diagram field
+            diagram = None
+            try:
+                concept_image = self._generate_concept_image(idea, analysis)
+                if concept_image:
+                    # Store image and get diagram reference
+                    idea_id = self.data_manager.save_idea(idea, None)  # Temporary save to get ID
+                    diagram = self.data_manager.save_diagram(
+                        idea_id=idea_id,
+                        image_data=concept_image,
+                        gpt_response="Artistic visualization"
+                    )
+            except Exception as e:
+                logger.error(f"Error generating concept image: {str(e)}")
             
+            # Create response with diagram field
             response = AgentResponse(
                 suggestions=analysis["suggestions"],
-                questions=analysis["questions"],
+                questions=[],  # Empty questions due to skip_questions
                 related_concepts=analysis["related_concepts"],
                 implementation_steps=implementation_steps,
-                concept_images=concept_images  # Multiple images
+                diagram=diagram,  # Use stored diagram reference
+                skip_questions=True
             )
             
-            idea_id = self.data_manager.save_idea(idea, response)
-            
-            # Store all generated images
-            for idx, image in enumerate(concept_images):
-                if image:
-                    self.data_manager.save_diagram(
-                        idea_id=idea_id,
-                        image_data=image,
-                        gpt_response=f"Artistic visualization {idx + 1}"
-                    )
+            # Update the saved idea with complete response
+            self.data_manager.save_idea(idea, response)
             
             return response
+        
         except Exception as e:
             logger.error(f"Error processing artistic idea: {str(e)}")
             raise
@@ -70,26 +78,18 @@ class ArtsAgent(BaseAgent):
         idea_words = set(idea.concept.lower().split() + idea.keywords)
         return bool(idea_words & art_keywords)
     
-    def _generate_multiple_concept_images(
+    def _generate_concept_image(
         self, idea: Idea, analysis: Dict[str, List[str]]
-    ) -> List[Optional[str]]:
-        """Generate multiple artistic interpretations of the concept."""
+    ) -> Optional[str]:
+        """Generate a single artistic interpretation of the concept."""
         try:
             base_prompt = self._generate_image_prompt(idea, analysis)
-            style_variations = [
-                "in a realistic style",
-                "in an impressionist style",
-                "in a minimalist style",
-                "in a surrealist style"
-            ]
-            
-            return [
-                self.image_service.generate_image(f"{base_prompt}, {style}")
-                for style in style_variations
-            ]
+            # Use a single style for more consistent results
+            style = "in a realistic style with dramatic lighting and rich details"
+            return self.image_service.generate_image(f"{base_prompt}, {style}")
         except Exception as e:
-            logger.error(f"Error generating multiple concept images: {str(e)}")
-            return [None]
+            logger.error(f"Error generating concept image: {str(e)}")
+            return None
 
     def _create_analysis_prompt_internal(self, concept: str, keywords_str: str) -> str:
         return f"""As an art director and visual design expert, analyze this creative concept: {concept}
@@ -147,3 +147,118 @@ class ArtsAgent(BaseAgent):
         except Exception as e:
             logger.error(f"Error generating artistic prompt: {str(e)}")
             raise 
+
+    def _analyze_idea(self, idea: Idea) -> Dict[str, List[str]]:
+        """Perform arts-specific analysis."""
+        return self._analyze_idea_cached(
+            idea.concept,
+            ','.join(sorted(idea.keywords))
+        )
+
+    @lru_cache(maxsize=100)
+    def _analyze_idea_cached(self, concept: str, keywords_str: str) -> Dict[str, List[str]]:
+        """Cached analysis helper for art concepts."""
+        prompt = self._create_analysis_prompt_internal(concept, keywords_str)
+        try:
+            response = self.openai_service.create_completion(prompt)
+            return self._parse_analysis_response(response)
+        except Exception as e:
+            logger.error(f"Error in artistic analysis: {str(e)}")
+            raise
+
+    def _create_analysis_prompt(self, idea: Idea) -> str:
+        """Create analysis prompt for artistic ideas."""
+        return self._create_analysis_prompt_internal(
+            idea.concept,
+            ', '.join(idea.keywords)
+        )
+
+    def _create_implementation_prompt(self, idea: Idea, analysis: Dict[str, List[str]]) -> str:
+        """Create implementation prompt for artistic ideas."""
+        return f"""As a visual arts expert, outline the creation process for: {idea.concept}
+        
+        Context from analysis:
+        {chr(10).join([f"- {s}" for s in analysis.get("suggestions", [])[:3]])}
+        
+        Detail the artistic process:
+        
+        1. Preparation Phase:
+           - Reference gathering
+           - Style exploration
+           - Medium selection
+           - Composition planning
+        
+        2. Creation Process:
+           - Initial sketching
+           - Color palette development
+           - Technical execution
+           - Detail refinement
+        
+        3. Quality Enhancement:
+           - Artistic review
+           - Technical refinement
+           - Style consistency
+           - Visual impact assessment
+        
+        4. Finalization:
+           - Final touches
+           - Medium-specific finishing
+           - Presentation preparation
+           - Documentation
+        
+        Present this as a practical artistic creation guide."""
+
+    def _generate_implementation_steps(self, idea: Idea, analysis: Dict[str, List[str]]) -> List[str]:
+        """Generate implementation steps for artistic ideas."""
+        prompt = self._create_implementation_prompt(idea, analysis)
+        try:
+            response = self.openai_service.create_completion(prompt)
+            return [step.strip() for step in response.split('\n') if step.strip()]
+        except Exception as e:
+            logger.error(f"Error generating artistic steps: {str(e)}")
+            raise
+
+    def _parse_analysis_response(self, response: str) -> Dict[str, List[str]]:
+        """Parse the artistic response into structured sections.
+        
+        Args:
+            response: Raw response string from OpenAI
+            
+        Returns:
+            Dict with categorized artistic points, with empty lists as fallbacks
+        """
+        try:
+            # Split and filter empty lines, ensure at least 5 paragraphs with defaults
+            paragraphs = [p.strip() for p in response.split('\n\n') if p.strip()]
+            while len(paragraphs) < 5:
+                paragraphs.append("No additional artistic points available.")
+            
+            return {
+                "suggestions": self._extract_key_points(paragraphs[1]),      # Visual Elements
+                "questions": self._extract_key_points(paragraphs[2]),        # Technical Considerations
+                "related_concepts": self._extract_key_points(paragraphs[3]), # Artistic Context
+                "innovations": self._extract_key_points(paragraphs[4])       # Creative Possibilities
+            }
+        except Exception as e:
+            logger.warning(f"Error parsing analysis response: {str(e)}. Using default structure.")
+            # Provide safe defaults while maintaining expected response structure
+            return {
+                "suggestions": ["Focus on visual composition", "Consider color theory"],
+                "questions": [],  # Empty as per skip_questions requirement
+                "related_concepts": ["Artistic interpretation", "Creative expression"],
+                "innovations": ["Unique artistic approach"]
+            }
+
+    def _extract_key_points(self, text: str) -> List[str]:
+        """Extract key artistic points from narrative text."""
+        points = []
+        sentences = text.split('.')
+        
+        for sentence in sentences:
+            sentence = sentence.strip()
+            if (len(sentence) > 15 and 
+                any(art_word in sentence.lower() for art_word in 
+                    ['visual', 'color', 'composition', 'style', 'medium', 'technique', 'artistic'])):
+                points.append(sentence)
+        
+        return points[:5]

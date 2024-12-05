@@ -125,3 +125,33 @@
 2024-11-30 15:50:08,343 - src.core.idea_processor - INFO - Starting idea development process
 2024-11-30 15:50:09,784 - src.agents.domain_agent - INFO - Processing idea in arts domain
 2024-11-30 15:57:37,506 - src.core.idea_processor - INFO - Starting idea development process
+2024-11-30 16:13:52,216 - src.core.idea_processor - INFO - Initializing Idea Processor
+2024-11-30 16:14:36,801 - src.core.idea_processor - INFO - Starting idea development process
+2024-11-30 16:14:44,130 - src.core.idea_processor - INFO - Starting idea development process
+2024-11-30 16:18:16,797 - src.core.idea_processor - INFO - Initializing Idea Processor
+2024-11-30 16:18:21,947 - src.core.idea_processor - INFO - Starting idea development process
+2024-11-30 16:18:35,481 - src.core.idea_processor - INFO - Starting idea development process
+2024-11-30 16:24:21,877 - src.core.idea_processor - INFO - Initializing Idea Processor
+2024-11-30 16:24:28,335 - src.core.idea_processor - INFO - Starting idea development process
+2024-11-30 16:24:48,744 - src.agents.specialized_agents.arts_agent - ERROR - Error in artistic analysis: list index out of range
+2024-11-30 16:24:48,744 - src.agents.specialized_agents.arts_agent - ERROR - Error processing artistic idea: list index out of range
+2024-11-30 16:25:19,993 - src.core.idea_processor - INFO - Initializing Idea Processor
+2024-11-30 16:25:43,238 - src.core.idea_processor - INFO - Starting idea development process
+2024-11-30 16:26:32,475 - src.services.image_service - ERROR - Error loading model: `enable_sequential_cpu_offload` requires `accelerate v0.14.0` or higher
+2024-11-30 16:26:32,475 - src.services.image_service - ERROR - Error generating image: Failed to load Stable Diffusion model: `enable_sequential_cpu_offload` requires `accelerate v0.14.0` or higher
+2024-11-30 16:27:08,437 - src.core.idea_processor - INFO - Initializing Idea Processor
+2024-11-30 16:29:05,055 - src.core.idea_processor - INFO - Starting idea development process
+2024-11-30 16:29:06,709 - src.services.image_service - WARNING - Accelerate not found. Installing accelerate is recommended for better performance. Install with: pip install accelerate
+2024-11-30 16:29:06,709 - src.services.image_service - WARNING - Accelerate not found. Installing accelerate is recommended for better performance. Install with: pip install accelerate
+2024-11-30 16:29:06,725 - src.services.image_service - WARNING - Accelerate not found. Installing accelerate is recommended for better performance. Install with: pip install accelerate
+2024-11-30 16:29:06,741 - src.services.image_service - WARNING - Accelerate not found. Installing accelerate is recommended for better performance. Install with: pip install accelerate
+2024-11-30 16:29:06,755 - src.services.image_service - WARNING - Accelerate not found. Installing accelerate is recommended for better performance. Install with: pip install accelerate
+2024-11-30 16:29:06,770 - src.services.image_service - WARNING - Accelerate not found. Installing accelerate is recommended for better performance. Install with: pip install accelerate
+2024-11-30 16:29:06,798 - src.services.image_service - WARNING - Accelerate not found. Installing accelerate is recommended for better performance. Install with: pip install accelerate
+2024-11-30 16:29:06,799 - src.services.image_service - WARNING - Accelerate not found. Installing accelerate is recommended for better performance. Install with: pip install accelerate
+2024-11-30 16:29:06,812 - src.services.image_service - WARNING - Accelerate not found. Installing accelerate is recommended for better performance. Install with: pip install accelerate
+2024-11-30 16:29:06,813 - src.services.image_service - WARNING - Accelerate not found. Installing accelerate is recommended for better performance. Install with: pip install accelerate
+2024-11-30 16:29:06,827 - src.services.image_service - WARNING - Accelerate not found. Installing accelerate is recommended for better performance. Install with: pip install accelerate
+2024-11-30 16:29:06,827 - src.services.image_service - WARNING - Accelerate not found. Installing accelerate is recommended for better performance. Install with: pip install accelerate
+2024-11-30 20:38:20,415 - src.agents.specialized_agents.arts_agent - ERROR - Error processing artistic idea: AgentResponse.__init__() got an unexpected keyword argument 'concept_images'
+2024-12-04 23:21:37,836 - src.core.idea_processor - INFO - Initializing Idea Processor

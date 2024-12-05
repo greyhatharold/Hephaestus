@@ -167,5 +167,5 @@ class BusinessAgent(BaseAgent):
         4. Risk management and compliance considerations
         5. Growth and scaling strategy
         
-        Write this as a flowing narrative that maintains strategic focus while being engaging to read."""
+        Write this as a flowing narrative that maintains strategic focus while being engaging to read dissimilar from a presentation."""
   

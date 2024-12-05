@@ -89,6 +89,7 @@ class CodeAgent(BaseAgent):
            - Design patterns and principles
            - Technical stack considerations
            - Scalability and maintainability
+           - Include related readings and key concepts.
         
         2. User Interface Design:
            - UI/UX principles and patterns
@@ -101,6 +102,7 @@ class CodeAgent(BaseAgent):
            - Performance considerations
            - Security implications
            - Cross-platform compatibility
+           - Include cost and time estimates.
         
         4. Best Practices:
            - Coding standards
@@ -114,7 +116,7 @@ class CodeAgent(BaseAgent):
            - Performance optimizations
            - User experience enhancements
         
-        Focus on practical, implementable solutions while maintaining high coding standards."""
+        Focus on practical, implementable solutions while maintaining high coding standards. Include a section on how to implement the design."""
 
     def _parse_analysis_response(self, response: str) -> Dict[str, List[str]]:
         """Parse the narrative response into structured sections."""
@@ -172,23 +174,7 @@ class CodeAgent(BaseAgent):
         Provide practical, actionable steps while emphasizing clean code and best practices."""
 
     def _generate_image_prompt(self, idea: Idea) -> str:
-        """Generate prompt for image creation.
-        
-        Args:
-            idea: The idea to visualize
-            
-        Returns:
-            str: The formatted prompt for image generation
-        """
-        return f"""Create a modern, minimalist technical diagram or mockup, designed to be used with a Stable Diffusion model, for: {idea.concept}
-        
-        Key aspects to visualize:
-        {chr(10).join([f"- {keyword}" for keyword in idea.keywords])}
-        
-        Style: Clean, professional, technical illustration
-        Focus: Architecture and component relationships
-        Colors: Neutral, professional palette
-        """
+        pass
 
     def _generate_implementation_steps(self, idea: Idea, analysis: Dict[str, List[str]]) -> List[str]:
         """Generate implementation steps based on analysis.

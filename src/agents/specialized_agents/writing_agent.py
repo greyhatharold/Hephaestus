@@ -191,22 +191,4 @@ class WritingAgent(BaseAgent):
         return points[:5]
 
     def _generate_image_prompt(self, idea: Idea, analysis: Dict[str, List[str]]) -> str:
-        """Generate a detailed prompt for content strategy visualization."""
-        prompt = f"""Create a visual representation prompt for: {idea.concept}
-        
-        Context:
-        {chr(10).join([f"- {s}" for s in analysis.get("suggestions", [])[:2]])}
-        
-        Focus on visual elements that represent:
-        - Content structure and flow
-        - Audience engagement points
-        - Distribution channels
-        - Success metrics
-        
-        Make it visually appealing while maintaining professional clarity."""
-        
-        try:
-            return self.openai_service.create_completion(prompt)
-        except Exception as e:
-            logger.error(f"Error generating image prompt: {str(e)}")
-            raise 
+        pass
